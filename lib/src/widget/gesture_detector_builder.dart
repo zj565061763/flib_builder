@@ -45,8 +45,51 @@ class FGestureDetectorBuilder extends FWidgetBuilder
   GestureScaleEndCallback onScaleEnd;
 
   HitTestBehavior behavior;
-  bool excludeFromSemantics = false;
-  DragStartBehavior dragStartBehavior = DragStartBehavior.down;
+  bool excludeFromSemantics;
+  DragStartBehavior dragStartBehavior;
+
+  FGestureDetectorBuilder({
+    Key key,
+    Widget child,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTap,
+    this.onTapCancel,
+    this.onDoubleTap,
+    this.onLongPress,
+    this.onLongPressUp,
+    this.onLongPressDragStart,
+    this.onLongPressDragUpdate,
+    this.onLongPressDragUp,
+    this.onVerticalDragDown,
+    this.onVerticalDragStart,
+    this.onVerticalDragUpdate,
+    this.onVerticalDragEnd,
+    this.onVerticalDragCancel,
+    this.onHorizontalDragDown,
+    this.onHorizontalDragStart,
+    this.onHorizontalDragUpdate,
+    this.onHorizontalDragEnd,
+    this.onHorizontalDragCancel,
+    this.onForcePressStart,
+    this.onForcePressPeak,
+    this.onForcePressUpdate,
+    this.onForcePressEnd,
+    this.onPanDown,
+    this.onPanStart,
+    this.onPanUpdate,
+    this.onPanEnd,
+    this.onPanCancel,
+    this.onScaleStart,
+    this.onScaleUpdate,
+    this.onScaleEnd,
+    this.behavior,
+    this.excludeFromSemantics = false,
+    this.dragStartBehavior = DragStartBehavior.down,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
 
   @override
   Widget build({

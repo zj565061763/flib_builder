@@ -14,6 +14,23 @@ class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   int maxLines;
   String semanticsLabel;
 
+  FTextBuilder({
+    Key key,
+    this.data,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+  }) {
+    this.key = key;
+  }
+
   @override
   Widget build({
     String data,

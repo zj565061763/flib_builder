@@ -6,6 +6,16 @@ class FSizedBoxBuilder extends FWidgetBuilder
   double width;
   double height;
 
+  FSizedBoxBuilder({
+    Key key,
+    Widget child,
+    this.width,
+    this.height,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
+
   @override
   Widget build({
     Key key,

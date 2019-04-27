@@ -14,6 +14,24 @@ class FContainerBuilder extends FWidgetBuilder
   EdgeInsetsGeometry margin;
   Matrix4 transform;
 
+  FContainerBuilder({
+    Key key,
+    Widget child,
+    this.alignment,
+    this.padding,
+    this.color,
+    this.decoration,
+    this.foregroundDecoration,
+    this.width,
+    this.height,
+    this.constraints,
+    this.margin,
+    this.transform,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
+
   @override
   Widget build({
     Key key,
