@@ -1,7 +1,7 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FBText extends FWidgetBuilder {
+class FTextBuilder extends FWidgetBuilder {
   String data;
   TextStyle style;
   StrutStyle strutStyle;
@@ -14,8 +14,9 @@ class FBText extends FWidgetBuilder {
   int maxLines;
   String semanticsLabel;
 
-  Text build(
-    String data, {
+  @override
+  Widget build({
+    String data,
     Key key,
     TextStyle style,
     StrutStyle strutStyle,
@@ -45,7 +46,7 @@ class FBText extends FWidgetBuilder {
   }
 }
 
-class FBRichText extends FWidgetBuilder {
+class FRichTextBuilder extends FWidgetBuilder {
   TextSpan text;
   TextAlign textAlign = TextAlign.start;
   TextDirection textDirection;
@@ -56,8 +57,9 @@ class FBRichText extends FWidgetBuilder {
   Locale locale;
   StrutStyle strutStyle;
 
-  RichText build(
-    TextSpan text, {
+  @override
+  Widget build({
+    TextSpan text,
     Key key,
     TextAlign textAlign,
     TextDirection textDirection,

@@ -1,7 +1,7 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FBMaterialButton extends FChildWidgetBuilder {
+class FMaterialButtonBuilder extends FChildWidgetBuilder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -23,7 +23,8 @@ class FBMaterialButton extends FChildWidgetBuilder {
   double minWidth;
   double height;
 
-  MaterialButton build({
+  @override
+  Widget build({
     Key key,
     @required VoidCallback onPressed,
     ValueChanged<bool> onHighlightChanged,
@@ -75,7 +76,7 @@ class FBMaterialButton extends FChildWidgetBuilder {
   }
 }
 
-class FBFlatButton extends FChildWidgetBuilder {
+class FFlatButtonBuilder extends FChildWidgetBuilder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -91,7 +92,8 @@ class FBFlatButton extends FChildWidgetBuilder {
   Clip clipBehavior = Clip.none;
   MaterialTapTargetSize materialTapTargetSize;
 
-  FlatButton build({
+  @override
+  Widget build({
     Key key,
     @required VoidCallback onPressed,
     ValueChanged<bool> onHighlightChanged,
@@ -172,7 +174,7 @@ class FBFlatButton extends FChildWidgetBuilder {
   }
 }
 
-class FBRaisedButton extends FChildWidgetBuilder {
+class FRaisedButtonBuilder extends FChildWidgetBuilder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -192,7 +194,8 @@ class FBRaisedButton extends FChildWidgetBuilder {
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
 
-  RaisedButton build({
+  @override
+  Widget build({
     Key key,
     @required VoidCallback onPressed,
     ValueChanged<bool> onHighlightChanged,
@@ -287,7 +290,7 @@ class FBRaisedButton extends FChildWidgetBuilder {
   }
 }
 
-class FBOutlineButton extends FChildWidgetBuilder {
+class FOutlineButtonBuilder extends FChildWidgetBuilder {
   VoidCallback onPressed;
   ButtonTextTheme textTheme;
   Color textColor;
@@ -303,7 +306,8 @@ class FBOutlineButton extends FChildWidgetBuilder {
   ShapeBorder shape;
   Clip clipBehavior = Clip.none;
 
-  OutlineButton build({
+  @override
+  Widget build({
     Key key,
     @required VoidCallback onPressed,
     ButtonTextTheme textTheme,

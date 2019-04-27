@@ -1,7 +1,7 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FBContainer extends FChildWidgetBuilder {
+class FContainerBuilder extends FChildWidgetBuilder {
   AlignmentGeometry alignment;
   EdgeInsetsGeometry padding;
   Color color;
@@ -13,7 +13,8 @@ class FBContainer extends FChildWidgetBuilder {
   EdgeInsetsGeometry margin;
   Matrix4 transform;
 
-  Container build({
+  @override
+  Widget build({
     Key key,
     AlignmentGeometry alignment,
     EdgeInsetsGeometry padding,

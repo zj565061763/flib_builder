@@ -2,7 +2,7 @@ import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class FBGestureDetector extends FChildWidgetBuilder {
+class FGestureDetectorBuilder extends FChildWidgetBuilder {
   GestureTapDownCallback onTapDown;
   GestureTapUpCallback onTapUp;
   GestureTapCallback onTap;
@@ -47,7 +47,8 @@ class FBGestureDetector extends FChildWidgetBuilder {
   bool excludeFromSemantics = false;
   DragStartBehavior dragStartBehavior = DragStartBehavior.down;
 
-  GestureDetector build({
+  @override
+  Widget build({
     Key key,
     Widget child,
     GestureTapDownCallback onTapDown,
