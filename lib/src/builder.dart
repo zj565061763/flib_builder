@@ -9,3 +9,7 @@ abstract class FWidgetBuilder {
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
   Widget child;
 }
+
+abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
+  List<Widget> children = const <Widget>[];
+}
