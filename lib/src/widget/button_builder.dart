@@ -18,11 +18,39 @@ class FMaterialButtonBuilder extends FWidgetBuilder
   double disabledElevation;
   EdgeInsetsGeometry padding;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
   double minWidth;
   double height;
+
+  FMaterialButtonBuilder({
+    Key key,
+    Widget child,
+    this.onPressed,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.elevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    this.padding,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.materialTapTargetSize,
+    this.animationDuration,
+    this.minWidth,
+    this.height,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
 
   @override
   Widget build({
@@ -91,8 +119,31 @@ class FFlatButtonBuilder extends FWidgetBuilder
   Brightness colorBrightness;
   EdgeInsetsGeometry padding;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
+
   MaterialTapTargetSize materialTapTargetSize;
+
+  FFlatButtonBuilder({
+    Key key,
+    Widget child,
+    this.onPressed,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.padding,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.materialTapTargetSize,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
 
   @override
   Widget build({
@@ -196,6 +247,32 @@ class FRaisedButtonBuilder extends FWidgetBuilder
   Clip clipBehavior = Clip.none;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
+
+  FRaisedButtonBuilder({
+    Key key,
+    Widget child,
+    this.onPressed,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.elevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    this.padding,
+    this.shape,
+    this.clipBehavior,
+    this.materialTapTargetSize,
+    this.animationDuration,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
 
   @override
   Widget build({
@@ -308,7 +385,29 @@ class FOutlineButtonBuilder extends FWidgetBuilder
   Color highlightedBorderColor;
   EdgeInsetsGeometry padding;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
+
+  FOutlineButtonBuilder({
+    Key key,
+    Widget child,
+    this.onPressed,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.highlightColor,
+    this.splashColor,
+    this.highlightElevation,
+    this.borderSide,
+    this.disabledBorderColor,
+    this.highlightedBorderColor,
+    this.padding,
+    this.shape,
+    this.clipBehavior = Clip.none,
+  }) {
+    this.key = key;
+    this.child = child;
+  }
 
   @override
   Widget build({
