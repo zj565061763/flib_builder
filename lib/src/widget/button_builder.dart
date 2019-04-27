@@ -244,7 +244,7 @@ class FRaisedButtonBuilder extends FWidgetBuilder
   double disabledElevation;
   EdgeInsetsGeometry padding;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
 
@@ -266,7 +266,7 @@ class FRaisedButtonBuilder extends FWidgetBuilder
     this.disabledElevation,
     this.padding,
     this.shape,
-    this.clipBehavior,
+    this.clipBehavior = Clip.none,
     this.materialTapTargetSize,
     this.animationDuration,
   }) {

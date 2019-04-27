@@ -65,14 +65,29 @@ class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
 
 class FRichTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   TextSpan text;
-  TextAlign textAlign = TextAlign.start;
+  TextAlign textAlign;
   TextDirection textDirection;
-  bool softWrap = true;
-  TextOverflow overflow = TextOverflow.clip;
-  double textScaleFactor = 1.0;
+  bool softWrap;
+  TextOverflow overflow;
+  double textScaleFactor;
   int maxLines;
   Locale locale;
   StrutStyle strutStyle;
+
+  FRichTextBuilder({
+    Key key,
+    this.text,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.softWrap = true,
+    this.overflow = TextOverflow.clip,
+    this.textScaleFactor = 1.0,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+  }) {
+    this.key = key;
+  }
 
   @override
   Widget build({
