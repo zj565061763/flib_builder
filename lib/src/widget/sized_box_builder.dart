@@ -1,7 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FSizedBoxBuilder extends FChildWidgetBuilder {
+class FSizedBoxBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   double width;
   double height;
 

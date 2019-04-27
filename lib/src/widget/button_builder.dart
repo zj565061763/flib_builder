@@ -1,7 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FMaterialButtonBuilder extends FChildWidgetBuilder {
+class FMaterialButtonBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -76,7 +77,8 @@ class FMaterialButtonBuilder extends FChildWidgetBuilder {
   }
 }
 
-class FFlatButtonBuilder extends FChildWidgetBuilder {
+class FFlatButtonBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -174,7 +176,8 @@ class FFlatButtonBuilder extends FChildWidgetBuilder {
   }
 }
 
-class FRaisedButtonBuilder extends FChildWidgetBuilder {
+class FRaisedButtonBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
@@ -290,7 +293,8 @@ class FRaisedButtonBuilder extends FChildWidgetBuilder {
   }
 }
 
-class FOutlineButtonBuilder extends FChildWidgetBuilder {
+class FOutlineButtonBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
   ButtonTextTheme textTheme;
   Color textColor;

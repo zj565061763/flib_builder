@@ -1,7 +1,7 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FTextBuilder extends FWidgetBuilder {
+class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   String data;
   TextStyle style;
   StrutStyle strutStyle;
@@ -46,7 +46,7 @@ class FTextBuilder extends FWidgetBuilder {
   }
 }
 
-class FRichTextBuilder extends FWidgetBuilder {
+class FRichTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   TextSpan text;
   TextAlign textAlign = TextAlign.start;
   TextDirection textDirection;

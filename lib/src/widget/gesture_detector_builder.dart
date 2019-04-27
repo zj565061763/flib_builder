@@ -2,7 +2,8 @@ import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class FGestureDetectorBuilder extends FChildWidgetBuilder {
+class FGestureDetectorBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   GestureTapDownCallback onTapDown;
   GestureTapUpCallback onTapUp;
   GestureTapCallback onTap;

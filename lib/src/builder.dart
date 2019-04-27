@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
-  Key key;
-
   Widget build();
 }
 
-abstract class FChildWidgetBuilder extends FWidgetBuilder {
+mixin FMixinKeyHolder {
+  Key key;
+}
+
+mixin FMixinChildHolder {
   Widget child;
 }
 
-abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
+mixin FMixinChildrenHolder {
   List<Widget> children = const <Widget>[];
 }

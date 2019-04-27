@@ -1,7 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FContainerBuilder extends FChildWidgetBuilder {
+class FContainerBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildHolder {
   AlignmentGeometry alignment;
   EdgeInsetsGeometry padding;
   Color color;

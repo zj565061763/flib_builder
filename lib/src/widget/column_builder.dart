@@ -1,7 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
-class FColumnBuilder extends FChildrenWidgetBuilder {
+class FColumnBuilder extends FWidgetBuilder
+    with FMixinKeyHolder, FMixinChildrenHolder {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
   MainAxisSize mainAxisSize = MainAxisSize.max;
   CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;
