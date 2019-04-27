@@ -33,7 +33,7 @@ class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
 
   @override
   Widget build({
-    String data,
+    @required String data,
     Key key,
     TextStyle style,
     StrutStyle strutStyle,
@@ -76,7 +76,7 @@ class FRichTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
 
   @override
   Widget build({
-    TextSpan text,
+    @required TextSpan text,
     Key key,
     TextAlign textAlign,
     TextDirection textDirection,
