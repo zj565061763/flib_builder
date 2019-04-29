@@ -12,7 +12,7 @@ class FRowBuilder extends FWidgetBuilder
 
   FRowBuilder({
     Key key,
-    List<Widget> children = const <Widget>[],
+    List<Widget> children,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
     this.crossAxisAlignment = CrossAxisAlignment.center,
@@ -21,7 +21,7 @@ class FRowBuilder extends FWidgetBuilder
     this.textBaseline,
   }) {
     this.key = key;
-    this.children = children;
+    this.children = children ?? [];
   }
 
   @override

@@ -14,10 +14,10 @@ class FStackBuilder extends FWidgetBuilder
     this.textDirection,
     this.fit = StackFit.loose,
     this.overflow = Overflow.clip,
-    List<Widget> children = const <Widget>[],
+    List<Widget> children,
   }) {
     this.key = key;
-    this.children = children;
+    this.children = children ?? [];
   }
 
   @override
