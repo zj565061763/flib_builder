@@ -190,10 +190,13 @@ class FRaisedButtonBuilder extends FWidgetBuilder
 class FOutlineButtonBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
+  VoidCallback onLongPress;
   ButtonTextTheme textTheme;
   Color textColor;
   Color disabledTextColor;
   Color color;
+  Color focusColor;
+  Color hoverColor;
   Color highlightColor;
   Color splashColor;
   double highlightElevation;
@@ -201,108 +204,37 @@ class FOutlineButtonBuilder extends FWidgetBuilder
   Color disabledBorderColor;
   Color highlightedBorderColor;
   EdgeInsetsGeometry padding;
+  VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior;
-
-  FOutlineButtonBuilder({
-    Key key,
-    Widget child,
-    this.onPressed,
-    this.textTheme,
-    this.textColor,
-    this.disabledTextColor,
-    this.color,
-    this.highlightColor,
-    this.splashColor,
-    this.highlightElevation,
-    this.borderSide,
-    this.disabledBorderColor,
-    this.highlightedBorderColor,
-    this.padding,
-    this.shape,
-    this.clipBehavior = Clip.none,
-  }) {
-    this.key = key;
-    this.child = child;
-  }
+  Clip clipBehavior = Clip.none;
+  FocusNode focusNode;
+  bool autofocus = false;
 
   @override
-  Widget build({
-    Key key,
-    @required VoidCallback onPressed,
-    ButtonTextTheme textTheme,
-    Color textColor,
-    Color disabledTextColor,
-    Color color,
-    Color highlightColor,
-    Color splashColor,
-    double highlightElevation,
-    BorderSide borderSide,
-    Color disabledBorderColor,
-    Color highlightedBorderColor,
-    EdgeInsetsGeometry padding,
-    ShapeBorder shape,
-    Clip clipBehavior = Clip.none,
-    Widget child,
-  }) {
+  Widget build() {
     return OutlineButton(
-      key: key ?? this.key,
-      onPressed: onPressed ?? this.onPressed,
-      textTheme: textTheme ?? this.textTheme,
-      textColor: textColor ?? this.textColor,
-      disabledTextColor: disabledTextColor ?? this.disabledTextColor,
-      color: color ?? this.color,
-      highlightColor: highlightColor ?? this.highlightColor,
-      splashColor: splashColor ?? this.splashColor,
-      highlightElevation: highlightElevation ?? this.highlightElevation,
-      borderSide: borderSide ?? this.borderSide,
-      disabledBorderColor: disabledBorderColor ?? this.disabledBorderColor,
-      highlightedBorderColor:
-          highlightedBorderColor ?? this.highlightedBorderColor,
-      padding: padding ?? this.padding,
-      shape: shape ?? this.shape,
-      clipBehavior: clipBehavior ?? this.clipBehavior,
-      child: child ?? this.child,
-    );
-  }
-
-  OutlineButton buildIcon({
-    Key key,
-    @required VoidCallback onPressed,
-    ButtonTextTheme textTheme,
-    Color textColor,
-    Color disabledTextColor,
-    Color color,
-    Color highlightColor,
-    Color splashColor,
-    double highlightElevation,
-    Color highlightedBorderColor,
-    Color disabledBorderColor,
-    BorderSide borderSide,
-    EdgeInsetsGeometry padding,
-    ShapeBorder shape,
-    Clip clipBehavior,
-    @required Widget icon,
-    @required Widget label,
-  }) {
-    return OutlineButton.icon(
-      key: key ?? this.key,
-      onPressed: onPressed ?? this.onPressed,
-      textTheme: textTheme ?? this.textTheme,
-      textColor: textColor ?? this.textColor,
-      disabledTextColor: disabledTextColor ?? this.disabledTextColor,
-      color: color ?? this.color,
-      highlightColor: highlightColor ?? this.highlightColor,
-      splashColor: splashColor ?? this.splashColor,
-      highlightElevation: highlightElevation ?? this.highlightElevation,
-      highlightedBorderColor:
-          highlightedBorderColor ?? this.highlightedBorderColor,
-      borderSide: borderSide ?? this.borderSide,
-      padding: padding ?? this.padding,
-      shape: shape ?? this.shape,
-      clipBehavior: clipBehavior ?? this.clipBehavior,
-      icon: icon,
-      label: label,
+      key: this.key,
+      onPressed: this.onPressed,
+      onLongPress: this.onLongPress,
+      textTheme: this.textTheme,
+      textColor: this.textColor,
+      disabledTextColor: this.disabledTextColor,
+      color: this.color,
+      focusColor: this.focusColor,
+      hoverColor: this.hoverColor,
+      highlightColor: this.highlightColor,
+      splashColor: this.splashColor,
+      highlightElevation: this.highlightElevation,
+      borderSide: this.borderSide,
+      disabledBorderColor: this.disabledBorderColor,
+      highlightedBorderColor: this.highlightedBorderColor,
+      padding: this.padding,
+      visualDensity: this.visualDensity,
+      shape: this.shape,
+      clipBehavior: this.clipBehavior,
+      focusNode: this.focusNode,
+      autofocus: this.autofocus,
+      child: this.child,
     );
   }
 }
