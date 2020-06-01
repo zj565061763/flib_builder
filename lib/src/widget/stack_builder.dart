@@ -3,22 +3,10 @@ import 'package:flutter/material.dart';
 
 class FStackBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildrenHolder {
-  AlignmentDirectional alignment;
+  AlignmentDirectional alignment = AlignmentDirectional.topStart;
   TextDirection textDirection;
-  StackFit fit;
-  Overflow overflow;
-
-  FStackBuilder({
-    Key key,
-    this.alignment = AlignmentDirectional.topStart,
-    this.textDirection,
-    this.fit = StackFit.loose,
-    this.overflow = Overflow.clip,
-    List<Widget> children,
-  }) {
-    this.key = key;
-    this.children = children ?? [];
-  }
+  StackFit fit = StackFit.loose;
+  Overflow overflow = Overflow.clip;
 
   @override
   Widget build({
