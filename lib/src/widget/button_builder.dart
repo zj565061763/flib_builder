@@ -4,103 +4,69 @@ import 'package:flutter/material.dart';
 class FMaterialButtonBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
+  VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
   Color textColor;
   Color disabledTextColor;
   Color color;
   Color disabledColor;
+  Color focusColor;
+  Color hoverColor;
   Color highlightColor;
   Color splashColor;
   Brightness colorBrightness;
   double elevation;
+  double focusElevation;
+  double hoverElevation;
   double highlightElevation;
   double disabledElevation;
   EdgeInsetsGeometry padding;
+  VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior;
+  Clip clipBehavior = Clip.none;
+  FocusNode focusNode;
+  bool autofocus = false;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
   double minWidth;
   double height;
-
-  FMaterialButtonBuilder({
-    Key key,
-    Widget child,
-    this.onPressed,
-    this.onHighlightChanged,
-    this.textTheme,
-    this.textColor,
-    this.disabledTextColor,
-    this.color,
-    this.disabledColor,
-    this.highlightColor,
-    this.splashColor,
-    this.colorBrightness,
-    this.elevation,
-    this.highlightElevation,
-    this.disabledElevation,
-    this.padding,
-    this.shape,
-    this.clipBehavior = Clip.none,
-    this.materialTapTargetSize,
-    this.animationDuration,
-    this.minWidth,
-    this.height,
-  }) {
-    this.key = key;
-    this.child = child;
-  }
+  bool enableFeedback = true;
 
   @override
-  Widget build({
-    Key key,
-    @required VoidCallback onPressed,
-    ValueChanged<bool> onHighlightChanged,
-    ButtonTextTheme textTheme,
-    Color textColor,
-    Color disabledTextColor,
-    Color color,
-    Color disabledColor,
-    Color highlightColor,
-    Color splashColor,
-    Brightness colorBrightness,
-    double elevation,
-    double highlightElevation,
-    double disabledElevation,
-    EdgeInsetsGeometry padding,
-    ShapeBorder shape,
-    Clip clipBehavior = Clip.none,
-    MaterialTapTargetSize materialTapTargetSize,
-    Duration animationDuration,
-    double minWidth,
-    double height,
-    Widget child,
-  }) {
+  Widget build() {
     return MaterialButton(
-      key: key ?? this.key,
-      onPressed: onPressed ?? this.onPressed,
-      onHighlightChanged: onHighlightChanged ?? this.onHighlightChanged,
-      textTheme: textTheme ?? this.textTheme,
-      textColor: textColor ?? this.textColor,
-      disabledTextColor: disabledTextColor ?? this.disabledTextColor,
-      color: color ?? this.color,
-      disabledColor: disabledColor ?? this.disabledColor,
-      highlightColor: highlightColor ?? this.highlightColor,
-      splashColor: splashColor ?? this.splashColor,
-      colorBrightness: colorBrightness ?? this.colorBrightness,
-      elevation: elevation ?? this.elevation,
-      highlightElevation: highlightElevation ?? this.highlightElevation,
-      disabledElevation: disabledElevation ?? this.disabledElevation,
-      padding: padding ?? this.padding,
-      shape: shape ?? this.shape,
-      clipBehavior: clipBehavior ?? this.clipBehavior,
-      materialTapTargetSize:
-          materialTapTargetSize ?? this.materialTapTargetSize,
-      animationDuration: animationDuration ?? this.animationDuration,
-      minWidth: minWidth ?? this.minWidth,
-      height: height ?? this.height,
-      child: child ?? this.child,
+      key: this.key,
+      onPressed: this.onPressed,
+      onLongPress: this.onLongPress,
+      onHighlightChanged: this.onHighlightChanged,
+      textTheme: this.textTheme,
+      textColor: this.textColor,
+      disabledTextColor: this.disabledTextColor,
+      color: this.color,
+      disabledColor: this.disabledColor,
+      focusColor: this.focusColor,
+      hoverColor: this.hoverColor,
+      highlightColor: this.highlightColor,
+      splashColor: this.splashColor,
+      colorBrightness: this.colorBrightness,
+      elevation: this.elevation,
+      focusElevation: this.focusElevation,
+      hoverElevation: this.hoverElevation,
+      highlightElevation: this.highlightElevation,
+      disabledElevation: this.disabledElevation,
+      padding: this.padding,
+      visualDensity: this.visualDensity,
+      shape: this.shape,
+      clipBehavior: this.clipBehavior,
+      focusNode: this.focusNode,
+      autofocus: this.autofocus,
+      materialTapTargetSize: this.materialTapTargetSize,
+      animationDuration: this.animationDuration,
+      minWidth: this.minWidth,
+      height: this.height,
+      enableFeedback: this.enableFeedback,
+      child: this.child,
     );
   }
 }
