@@ -13,24 +13,7 @@ class FContainerBuilder extends FWidgetBuilder
   BoxConstraints constraints;
   EdgeInsetsGeometry margin;
   Matrix4 transform;
-
-  FContainerBuilder({
-    Key key,
-    Widget child,
-    this.alignment,
-    this.padding,
-    this.color,
-    this.decoration,
-    this.foregroundDecoration,
-    this.width,
-    this.height,
-    this.constraints,
-    this.margin,
-    this.transform,
-  }) {
-    this.key = key;
-    this.child = child;
-  }
+  Clip clipBehavior = Clip.none;
 
   @override
   Widget build({
@@ -46,6 +29,7 @@ class FContainerBuilder extends FWidgetBuilder
     EdgeInsetsGeometry margin,
     Matrix4 transform,
     Widget child,
+    Clip clipBehavior,
   }) {
     return Container(
       key: key ?? this.key,
@@ -60,6 +44,7 @@ class FContainerBuilder extends FWidgetBuilder
       margin: margin ?? this.margin,
       transform: transform ?? this.transform,
       child: child ?? this.child,
+      clipBehavior: clipBehavior ?? this.clipBehavior,
     );
   }
 }
