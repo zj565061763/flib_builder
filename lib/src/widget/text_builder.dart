@@ -17,37 +17,22 @@ class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   TextHeightBehavior textHeightBehavior;
 
   @override
-  Widget build({
-    @required String data,
-    Key key,
-    TextStyle style,
-    StrutStyle strutStyle,
-    TextAlign textAlign,
-    TextDirection textDirection,
-    Locale locale,
-    bool softWrap,
-    TextOverflow overflow,
-    double textScaleFactor,
-    int maxLines,
-    String semanticsLabel,
-    TextWidthBasis textWidthBasis,
-    TextHeightBehavior textHeightBehavior,
-  }) {
+  Widget build() {
     return Text(
-      data ?? this.data ?? '',
-      key: key ?? this.key,
-      style: style ?? this.style,
-      strutStyle: strutStyle ?? this.strutStyle,
-      textAlign: textAlign ?? this.textAlign,
-      textDirection: textDirection ?? this.textDirection,
-      locale: locale ?? this.locale,
-      softWrap: softWrap ?? this.softWrap,
-      overflow: overflow ?? this.overflow,
-      textScaleFactor: textScaleFactor ?? this.textScaleFactor,
-      maxLines: maxLines ?? this.maxLines,
-      semanticsLabel: semanticsLabel ?? this.semanticsLabel,
-      textWidthBasis: textWidthBasis ?? this.textWidthBasis,
-      textHeightBehavior: textHeightBehavior ?? this.textHeightBehavior,
+      this.data ?? '',
+      key: this.key,
+      style: this.style,
+      strutStyle: this.strutStyle,
+      textAlign: this.textAlign,
+      textDirection: this.textDirection,
+      locale: this.locale,
+      softWrap: this.softWrap,
+      overflow: this.overflow,
+      textScaleFactor: this.textScaleFactor,
+      maxLines: this.maxLines,
+      semanticsLabel: this.semanticsLabel,
+      textWidthBasis: this.textWidthBasis,
+      textHeightBehavior: this.textHeightBehavior,
     );
   }
 }
@@ -66,33 +51,20 @@ class FRichTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   TextHeightBehavior textHeightBehavior;
 
   @override
-  Widget build({
-    @required TextSpan text,
-    Key key,
-    TextAlign textAlign,
-    TextDirection textDirection,
-    bool softWrap,
-    TextOverflow overflow,
-    double textScaleFactor,
-    int maxLines,
-    Locale locale,
-    StrutStyle strutStyle,
-    TextWidthBasis textWidthBasis,
-    TextHeightBehavior textHeightBehavior,
-  }) {
+  Widget build() {
     return RichText(
-      key: key ?? this.key,
-      text: text ?? this.text ?? TextSpan(text: ''),
-      textAlign: textAlign ?? this.textAlign,
-      textDirection: textDirection ?? this.textDirection,
-      softWrap: softWrap ?? this.softWrap,
-      overflow: overflow ?? this.overflow,
-      textScaleFactor: textScaleFactor ?? this.textScaleFactor,
-      maxLines: maxLines ?? this.maxLines,
-      locale: locale ?? this.locale,
-      strutStyle: strutStyle ?? this.strutStyle,
-      textWidthBasis: textWidthBasis ?? this.textWidthBasis,
-      textHeightBehavior: textHeightBehavior ?? this.textHeightBehavior,
+      key: this.key,
+      text: this.text ?? TextSpan(text: ''),
+      textAlign: this.textAlign,
+      textDirection: this.textDirection,
+      softWrap: this.softWrap,
+      overflow: this.overflow,
+      textScaleFactor: this.textScaleFactor,
+      maxLines: this.maxLines,
+      locale: this.locale,
+      strutStyle: this.strutStyle,
+      textWidthBasis: this.textWidthBasis,
+      textHeightBehavior: this.textHeightBehavior,
     );
   }
 }
