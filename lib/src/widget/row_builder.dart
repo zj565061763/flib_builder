@@ -3,26 +3,12 @@ import 'package:flutter/material.dart';
 
 class FRowBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildrenHolder {
-  MainAxisAlignment mainAxisAlignment;
-  MainAxisSize mainAxisSize;
-  CrossAxisAlignment crossAxisAlignment;
+  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
+  MainAxisSize mainAxisSize = MainAxisSize.max;
+  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;
   TextDirection textDirection;
-  VerticalDirection verticalDirection;
+  VerticalDirection verticalDirection = VerticalDirection.down;
   TextBaseline textBaseline;
-
-  FRowBuilder({
-    Key key,
-    List<Widget> children,
-    this.mainAxisAlignment = MainAxisAlignment.start,
-    this.mainAxisSize = MainAxisSize.max,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
-    this.textDirection,
-    this.verticalDirection = VerticalDirection.down,
-    this.textBaseline,
-  }) {
-    this.key = key;
-    this.children = children ?? [];
-  }
 
   @override
   Widget build({
