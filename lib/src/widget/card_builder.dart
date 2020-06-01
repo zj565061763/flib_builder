@@ -4,27 +4,13 @@ import 'package:flutter/material.dart';
 class FCardBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildHolder {
   Color color;
+  Color shadowColor;
   double elevation;
   ShapeBorder shape;
-  bool borderOnForeground;
+  bool borderOnForeground = true;
   EdgeInsetsGeometry margin;
   Clip clipBehavior;
-  bool semanticContainer;
-
-  FCardBuilder({
-    Key key,
-    Widget child,
-    this.color,
-    this.elevation,
-    this.shape,
-    this.borderOnForeground = true,
-    this.margin,
-    this.clipBehavior,
-    this.semanticContainer = true,
-  }) {
-    this.key = key;
-    this.child = child;
-  }
+  bool semanticContainer = true;
 
   @override
   Widget build({
