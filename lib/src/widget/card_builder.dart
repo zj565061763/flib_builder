@@ -13,27 +13,17 @@ class FCardBuilder extends FWidgetBuilder
   bool semanticContainer = true;
 
   @override
-  Widget build({
-    Key key,
-    Widget child,
-    Color color,
-    double elevation,
-    ShapeBorder shape,
-    bool borderOnForeground,
-    EdgeInsetsGeometry margin,
-    Clip clipBehavior,
-    bool semanticContainer,
-  }) {
+  Widget build() {
     return Card(
-      key: key ?? this.key,
-      child: child ?? this.child,
-      color: color ?? this.color,
-      elevation: elevation ?? this.elevation,
-      shape: shape ?? this.shape,
-      borderOnForeground: borderOnForeground ?? this.borderOnForeground,
-      margin: margin ?? this.margin,
-      clipBehavior: clipBehavior ?? this.clipBehavior,
-      semanticContainer: semanticContainer ?? this.semanticContainer,
+      key: this.key,
+      child: this.child,
+      color: this.color,
+      elevation: this.elevation,
+      shape: this.shape,
+      borderOnForeground: this.borderOnForeground,
+      margin: this.margin,
+      clipBehavior: this.clipBehavior,
+      semanticContainer: this.semanticContainer,
     );
   }
 }
