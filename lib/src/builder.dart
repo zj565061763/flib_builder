@@ -13,5 +13,5 @@ mixin FMixinChildHolder {
 }
 
 mixin FMixinChildrenHolder {
-  List<Widget> children;
+  List<Widget> children = const <Widget>[];
 }
