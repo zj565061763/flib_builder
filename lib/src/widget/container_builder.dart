@@ -16,7 +16,9 @@ class FContainerBuilder extends FWidgetBuilder
   Clip clipBehavior = Clip.none;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return Container(
       key: this.key,
       alignment: this.alignment,
@@ -29,7 +31,7 @@ class FContainerBuilder extends FWidgetBuilder
       constraints: this.constraints,
       margin: this.margin,
       transform: this.transform,
-      child: this.child,
+      child: child ?? this.child,
       clipBehavior: this.clipBehavior,
     );
   }

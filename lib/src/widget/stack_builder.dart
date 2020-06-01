@@ -9,14 +9,16 @@ class FStackBuilder extends FWidgetBuilder
   Overflow overflow = Overflow.clip;
 
   @override
-  Widget build() {
+  Widget build({
+    List<Widget> children,
+  }) {
     return Stack(
       key: this.key,
       alignment: this.alignment,
       textDirection: this.textDirection,
       fit: this.fit,
       overflow: this.overflow,
-      children: this.children,
+      children: children ?? this.children,
     );
   }
 }

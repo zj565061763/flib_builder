@@ -13,10 +13,12 @@ class FCardBuilder extends FWidgetBuilder
   bool semanticContainer = true;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return Card(
       key: this.key,
-      child: this.child,
+      child: child ?? this.child,
       color: this.color,
       elevation: this.elevation,
       shape: this.shape,

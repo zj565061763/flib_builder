@@ -11,7 +11,9 @@ class FColumnBuilder extends FWidgetBuilder
   TextBaseline textBaseline;
 
   @override
-  Widget build() {
+  Widget build({
+    List<Widget> children,
+  }) {
     return Column(
       key: this.key,
       mainAxisAlignment: this.mainAxisAlignment,
@@ -20,7 +22,7 @@ class FColumnBuilder extends FWidgetBuilder
       textDirection: this.textDirection,
       verticalDirection: this.verticalDirection,
       textBaseline: this.textBaseline,
-      children: this.children,
+      children: children ?? this.children,
     );
   }
 }
