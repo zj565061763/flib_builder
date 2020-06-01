@@ -34,7 +34,9 @@ class FMaterialButtonBuilder extends FWidgetBuilder
   bool enableFeedback = true;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return MaterialButton(
       key: this.key,
       onPressed: this.onPressed,
@@ -66,7 +68,7 @@ class FMaterialButtonBuilder extends FWidgetBuilder
       minWidth: this.minWidth,
       height: this.height,
       enableFeedback: this.enableFeedback,
-      child: this.child,
+      child: child ?? this.child,
     );
   }
 }
@@ -95,7 +97,9 @@ class FFlatButtonBuilder extends FWidgetBuilder
   MaterialTapTargetSize materialTapTargetSize;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return FlatButton(
       key: this.key,
       onPressed: this.onPressed,
@@ -118,7 +122,7 @@ class FFlatButtonBuilder extends FWidgetBuilder
       focusNode: this.focusNode,
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
-      child: this.child,
+      child: child ?? this.child,
     );
   }
 }
@@ -153,7 +157,9 @@ class FRaisedButtonBuilder extends FWidgetBuilder
   Duration animationDuration;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return RaisedButton(
       key: this.key,
       onPressed: this.onPressed,
@@ -182,7 +188,7 @@ class FRaisedButtonBuilder extends FWidgetBuilder
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
       animationDuration: this.animationDuration,
-      child: this.child,
+      child: child ?? this.child,
     );
   }
 }
@@ -211,7 +217,9 @@ class FOutlineButtonBuilder extends FWidgetBuilder
   bool autofocus = false;
 
   @override
-  Widget build() {
+  Widget build({
+    Widget child,
+  }) {
     return OutlineButton(
       key: this.key,
       onPressed: this.onPressed,
@@ -234,7 +242,7 @@ class FOutlineButtonBuilder extends FWidgetBuilder
       clipBehavior: this.clipBehavior,
       focusNode: this.focusNode,
       autofocus: this.autofocus,
-      child: this.child,
+      child: child ?? this.child,
     );
   }
 }
