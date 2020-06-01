@@ -7,17 +7,12 @@ class FSizedBoxBuilder extends FWidgetBuilder
   double height;
 
   @override
-  Widget build({
-    Key key,
-    double width,
-    double height,
-    Widget child,
-  }) {
+  Widget build() {
     return SizedBox(
-      key: key ?? this.key,
-      width: width ?? this.width,
-      height: height ?? this.height,
-      child: child ?? this.child,
+      key: this.key,
+      width: this.width,
+      height: this.height,
+      child: this.child,
     );
   }
 }

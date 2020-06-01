@@ -11,25 +11,16 @@ class FRowBuilder extends FWidgetBuilder
   TextBaseline textBaseline;
 
   @override
-  Widget build({
-    Key key,
-    MainAxisAlignment mainAxisAlignment,
-    MainAxisSize mainAxisSize,
-    CrossAxisAlignment crossAxisAlignment,
-    TextDirection textDirection,
-    VerticalDirection verticalDirection,
-    TextBaseline textBaseline,
-    List<Widget> children,
-  }) {
+  Widget build() {
     return Row(
-      key: key ?? this.key,
-      mainAxisAlignment: mainAxisAlignment ?? this.mainAxisAlignment,
-      mainAxisSize: mainAxisSize ?? this.mainAxisSize,
-      crossAxisAlignment: crossAxisAlignment ?? this.crossAxisAlignment,
-      textDirection: textDirection ?? this.textDirection,
-      verticalDirection: verticalDirection ?? this.verticalDirection,
-      textBaseline: textBaseline ?? this.textBaseline,
-      children: children ?? this.children,
+      key: this.key,
+      mainAxisAlignment: this.mainAxisAlignment,
+      mainAxisSize: this.mainAxisSize,
+      crossAxisAlignment: this.crossAxisAlignment,
+      textDirection: this.textDirection,
+      verticalDirection: this.verticalDirection,
+      textBaseline: this.textBaseline,
+      children: this.children,
     );
   }
 }
