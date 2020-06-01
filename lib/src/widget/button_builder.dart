@@ -74,80 +74,51 @@ class FMaterialButtonBuilder extends FWidgetBuilder
 class FFlatButtonBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildHolder {
   VoidCallback onPressed;
+  VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
   ButtonTextTheme textTheme;
   Color textColor;
   Color disabledTextColor;
   Color color;
   Color disabledColor;
+  Color focusColor;
+  Color hoverColor;
   Color highlightColor;
   Color splashColor;
   Brightness colorBrightness;
   EdgeInsetsGeometry padding;
+  VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior;
-
+  Clip clipBehavior = Clip.none;
+  FocusNode focusNode;
+  bool autofocus = false;
   MaterialTapTargetSize materialTapTargetSize;
 
-  FFlatButtonBuilder({
-    Key key,
-    Widget child,
-    this.onPressed,
-    this.onHighlightChanged,
-    this.textTheme,
-    this.textColor,
-    this.disabledTextColor,
-    this.color,
-    this.disabledColor,
-    this.highlightColor,
-    this.splashColor,
-    this.colorBrightness,
-    this.padding,
-    this.shape,
-    this.clipBehavior = Clip.none,
-    this.materialTapTargetSize,
-  }) {
-    this.key = key;
-    this.child = child;
-  }
-
   @override
-  Widget build({
-    Key key,
-    @required VoidCallback onPressed,
-    ValueChanged<bool> onHighlightChanged,
-    ButtonTextTheme textTheme,
-    Color textColor,
-    Color disabledTextColor,
-    Color color,
-    Color disabledColor,
-    Color highlightColor,
-    Color splashColor,
-    Brightness colorBrightness,
-    EdgeInsetsGeometry padding,
-    ShapeBorder shape,
-    Clip clipBehavior = Clip.none,
-    MaterialTapTargetSize materialTapTargetSize,
-    @required Widget child,
-  }) {
+  Widget build() {
     return FlatButton(
-      key: key ?? this.key,
-      onPressed: onPressed ?? this.onPressed,
-      onHighlightChanged: onHighlightChanged ?? this.onHighlightChanged,
-      textTheme: textTheme ?? this.textTheme,
-      textColor: textColor ?? this.textColor,
-      disabledTextColor: disabledTextColor ?? this.disabledTextColor,
-      color: color ?? this.color,
-      disabledColor: disabledColor ?? this.disabledColor,
-      highlightColor: highlightColor ?? this.highlightColor,
-      splashColor: splashColor ?? this.splashColor,
-      colorBrightness: colorBrightness ?? this.colorBrightness,
-      padding: padding ?? this.padding,
-      shape: shape ?? this.shape,
-      clipBehavior: clipBehavior ?? this.clipBehavior,
-      materialTapTargetSize:
-          materialTapTargetSize ?? this.materialTapTargetSize,
-      child: child ?? this.child,
+      key: this.key,
+      onPressed: this.onPressed,
+      onLongPress: this.onLongPress,
+      onHighlightChanged: this.onHighlightChanged,
+      textTheme: this.textTheme,
+      textColor: this.textColor,
+      disabledTextColor: this.disabledTextColor,
+      color: this.color,
+      disabledColor: this.disabledColor,
+      focusColor: this.focusColor,
+      hoverColor: this.hoverColor,
+      highlightColor: this.highlightColor,
+      splashColor: this.splashColor,
+      colorBrightness: this.colorBrightness,
+      padding: this.padding,
+      visualDensity: this.visualDensity,
+      shape: this.shape,
+      clipBehavior: this.clipBehavior,
+      focusNode: this.focusNode,
+      autofocus: this.autofocus,
+      materialTapTargetSize: this.materialTapTargetSize,
+      child: this.child,
     );
   }
 
