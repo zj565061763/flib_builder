@@ -1,4 +1,4 @@
-import 'package:flib_builder/src/builder.dart';
+import 'package:flib_builder/src/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 import 'mixins.dart';

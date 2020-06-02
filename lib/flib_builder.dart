@@ -1,6 +1,6 @@
 library flib_builder;
 
-export 'src/builder.dart';
+export 'src/widget_builder.dart';
 export 'src/widget/button_builder.dart';
 export 'src/widget/card_builder.dart';
 export 'src/widget/column_builder.dart';
