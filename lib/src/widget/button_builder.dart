@@ -2,8 +2,8 @@ import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 abstract class _FBButton extends FChildWidgetBuilder {
-  bool canPress = false;
-  bool canLongPress = false;
+  bool extCanPress = false;
+  bool extCanLongPress = false;
 
   _FBButton({
     Key key,
@@ -82,8 +82,8 @@ class FBMaterialButton extends _FBButton {
   }) {
     return MaterialButton(
       key: this.key,
-      onPressed: canPress ? this.onPressed : null,
-      onLongPress: canLongPress ? this.onLongPress : null,
+      onPressed: extCanPress ? this.onPressed : null,
+      onLongPress: extCanLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -169,8 +169,8 @@ class FBFlatButton extends _FBButton {
   }) {
     return FlatButton(
       key: this.key,
-      onPressed: canPress ? this.onPressed : null,
-      onLongPress: canLongPress ? this.onLongPress : null,
+      onPressed: extCanPress ? this.onPressed : null,
+      onLongPress: extCanLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -259,8 +259,8 @@ class FBRaisedButton extends _FBButton {
   }) {
     return RaisedButton(
       key: this.key,
-      onPressed: canPress ? this.onPressed : null,
-      onLongPress: canLongPress ? this.onLongPress : null,
+      onPressed: extCanPress ? this.onPressed : null,
+      onLongPress: extCanLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -343,8 +343,8 @@ class FBOutlineButton extends _FBButton {
   }) {
     return OutlineButton(
       key: this.key,
-      onPressed: canPress ? this.onPressed : null,
-      onLongPress: canLongPress ? this.onLongPress : null,
+      onPressed: extCanPress ? this.onPressed : null,
+      onLongPress: extCanLongPress ? this.onLongPress : null,
       textTheme: this.textTheme,
       textColor: this.textColor,
       disabledTextColor: this.disabledTextColor,
