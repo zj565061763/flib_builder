@@ -1,6 +1,5 @@
 library flib_builder;
 
-export 'src/widget_builder.dart';
 export 'src/widget/button_builder.dart';
 export 'src/widget/card_builder.dart';
 export 'src/widget/column_builder.dart';
@@ -9,3 +8,4 @@ export 'src/widget/row_builder.dart';
 export 'src/widget/sized_box_builder.dart';
 export 'src/widget/stack_builder.dart';
 export 'src/widget/text_builder.dart';
+export 'src/widget/widget_builder.dart';
