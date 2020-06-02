@@ -17,16 +17,14 @@ class FBStack extends FChildrenWidgetBuilder {
   }) : super(key: key, children: children);
 
   @override
-  Widget buildImpl({
-    List<Widget> children,
-  }) {
+  Widget buildImpl() {
     return Stack(
       key: this.key,
       alignment: this.alignment,
       textDirection: this.textDirection,
       fit: this.fit,
       overflow: this.overflow,
-      children: children ?? this.children,
+      children: this.children,
     );
   }
 }

@@ -21,9 +21,7 @@ class FBColumn extends FChildrenWidgetBuilder {
   }) : super(key: key, children: children);
 
   @override
-  Widget buildImpl({
-    List<Widget> children,
-  }) {
+  Widget buildImpl() {
     return Column(
       key: this.key,
       mainAxisAlignment: this.mainAxisAlignment,
@@ -32,7 +30,7 @@ class FBColumn extends FChildrenWidgetBuilder {
       textDirection: this.textDirection,
       verticalDirection: this.verticalDirection,
       textBaseline: this.textBaseline,
-      children: children ?? this.children,
+      children: this.children,
     );
   }
 }

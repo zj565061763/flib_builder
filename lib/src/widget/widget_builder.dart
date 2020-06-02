@@ -27,10 +27,6 @@ abstract class FChildWidgetBuilder extends FWidgetBuilder {
     Key key,
     this.child,
   }) : super(key: key);
-
-  @protected
-  @override
-  Widget buildImpl({Widget child});
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
@@ -48,10 +44,4 @@ abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
     List<Widget> children,
   })  : this._children = children ?? const <Widget>[],
         super(key: key);
-
-  @protected
-  @override
-  Widget buildImpl({
-    List<Widget> children,
-  });
 }

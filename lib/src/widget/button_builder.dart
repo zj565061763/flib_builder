@@ -77,9 +77,7 @@ class FBMaterialButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return MaterialButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
@@ -111,7 +109,7 @@ class FBMaterialButton extends _FBButton {
       minWidth: this.minWidth,
       height: this.height,
       enableFeedback: this.enableFeedback,
-      child: child ?? this.child,
+      child: this.child,
     );
   }
 }
@@ -164,9 +162,7 @@ class FBFlatButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return FlatButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
@@ -189,7 +185,7 @@ class FBFlatButton extends _FBButton {
       focusNode: this.focusNode,
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
-      child: child ?? this.child,
+      child: this.child,
     );
   }
 }
@@ -254,9 +250,7 @@ class FBRaisedButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return RaisedButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
@@ -285,7 +279,7 @@ class FBRaisedButton extends _FBButton {
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
       animationDuration: this.animationDuration,
-      child: child ?? this.child,
+      child: this.child,
     );
   }
 }
@@ -338,9 +332,7 @@ class FBOutlineButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return OutlineButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,

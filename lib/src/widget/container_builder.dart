@@ -31,9 +31,7 @@ class FBContainer extends FChildWidgetBuilder {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return Container(
       key: this.key,
       alignment: this.alignment,
@@ -46,7 +44,7 @@ class FBContainer extends FChildWidgetBuilder {
       constraints: this.constraints,
       margin: this.margin,
       transform: this.transform,
-      child: child ?? this.child,
+      child: this.child,
       clipBehavior: this.clipBehavior,
     );
   }

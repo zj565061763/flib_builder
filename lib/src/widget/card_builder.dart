@@ -25,12 +25,10 @@ class FBCard extends FChildWidgetBuilder {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return Card(
       key: this.key,
-      child: child ?? this.child,
+      child: this.child,
       color: this.color,
       elevation: this.elevation,
       shape: this.shape,

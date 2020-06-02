@@ -13,14 +13,12 @@ class FBSizedBox extends FChildWidgetBuilder {
   }) : super(key: key, child: child);
 
   @override
-  Widget buildImpl({
-    Widget child,
-  }) {
+  Widget buildImpl() {
     return SizedBox(
       key: this.key,
       width: this.width,
       height: this.height,
-      child: child ?? this.child,
+      child: this.child,
     );
   }
 }
