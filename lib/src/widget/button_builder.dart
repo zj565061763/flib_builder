@@ -1,7 +1,17 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-class FBMaterialButton extends FChildWidgetBuilder {
+abstract class _FBButton extends FChildWidgetBuilder {
+  bool canPress = false;
+  bool canLongPress = false;
+
+  _FBButton({
+    Key key,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
+}
+
+class FBMaterialButton extends _FBButton {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -72,8 +82,8 @@ class FBMaterialButton extends FChildWidgetBuilder {
   }) {
     return MaterialButton(
       key: this.key,
-      onPressed: this.onPressed,
-      onLongPress: this.onLongPress,
+      onPressed: canPress ? this.onPressed : null,
+      onLongPress: canLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -106,7 +116,7 @@ class FBMaterialButton extends FChildWidgetBuilder {
   }
 }
 
-class FBFlatButton extends FChildWidgetBuilder {
+class FBFlatButton extends _FBButton {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -159,8 +169,8 @@ class FBFlatButton extends FChildWidgetBuilder {
   }) {
     return FlatButton(
       key: this.key,
-      onPressed: this.onPressed,
-      onLongPress: this.onLongPress,
+      onPressed: canPress ? this.onPressed : null,
+      onLongPress: canLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -184,7 +194,7 @@ class FBFlatButton extends FChildWidgetBuilder {
   }
 }
 
-class FBRaisedButton extends FChildWidgetBuilder {
+class FBRaisedButton extends _FBButton {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -249,8 +259,8 @@ class FBRaisedButton extends FChildWidgetBuilder {
   }) {
     return RaisedButton(
       key: this.key,
-      onPressed: this.onPressed,
-      onLongPress: this.onLongPress,
+      onPressed: canPress ? this.onPressed : null,
+      onLongPress: canLongPress ? this.onLongPress : null,
       onHighlightChanged: this.onHighlightChanged,
       textTheme: this.textTheme,
       textColor: this.textColor,
@@ -280,7 +290,7 @@ class FBRaisedButton extends FChildWidgetBuilder {
   }
 }
 
-class FBOutlineButton extends FChildWidgetBuilder {
+class FBOutlineButton extends _FBButton {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ButtonTextTheme textTheme;
@@ -333,8 +343,8 @@ class FBOutlineButton extends FChildWidgetBuilder {
   }) {
     return OutlineButton(
       key: this.key,
-      onPressed: this.onPressed,
-      onLongPress: this.onLongPress,
+      onPressed: canPress ? this.onPressed : null,
+      onLongPress: canLongPress ? this.onLongPress : null,
       textTheme: this.textTheme,
       textColor: this.textColor,
       disabledTextColor: this.disabledTextColor,
