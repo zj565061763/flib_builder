@@ -26,7 +26,7 @@ class FBContainer extends FChildWidgetBuilder {
     this.constraints,
     this.margin,
     this.transform,
-    FWidgetBuilder child,
+    Widget child,
     this.clipBehavior = Clip.none,
   }) : super(key: key, child: child);
 
@@ -46,7 +46,7 @@ class FBContainer extends FChildWidgetBuilder {
       constraints: this.constraints,
       margin: this.margin,
       transform: this.transform,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
       clipBehavior: this.clipBehavior,
     );
   }

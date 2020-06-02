@@ -7,7 +7,7 @@ abstract class _FBButton extends FChildWidgetBuilder {
 
   _FBButton({
     Key key,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 }
 
@@ -73,7 +73,7 @@ class FBMaterialButton extends _FBButton {
     this.minWidth,
     this.height,
     this.enableFeedback = true,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -111,7 +111,7 @@ class FBMaterialButton extends _FBButton {
       minWidth: this.minWidth,
       height: this.height,
       enableFeedback: this.enableFeedback,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
     );
   }
 }
@@ -160,7 +160,7 @@ class FBFlatButton extends _FBButton {
     this.focusNode,
     this.autofocus = false,
     this.materialTapTargetSize,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -189,7 +189,7 @@ class FBFlatButton extends _FBButton {
       focusNode: this.focusNode,
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
     );
   }
 }
@@ -250,7 +250,7 @@ class FBRaisedButton extends _FBButton {
     this.autofocus = false,
     this.materialTapTargetSize,
     this.animationDuration,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -285,7 +285,7 @@ class FBRaisedButton extends _FBButton {
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
       animationDuration: this.animationDuration,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
     );
   }
 }
@@ -334,7 +334,7 @@ class FBOutlineButton extends _FBButton {
     this.clipBehavior = Clip.none,
     this.focusNode,
     this.autofocus = false,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -363,7 +363,7 @@ class FBOutlineButton extends _FBButton {
       clipBehavior: this.clipBehavior,
       focusNode: this.focusNode,
       autofocus: this.autofocus,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
     );
   }
 }

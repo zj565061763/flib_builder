@@ -13,7 +13,7 @@ class FBStack extends FChildrenWidgetBuilder {
     this.textDirection,
     this.fit = StackFit.loose,
     this.overflow = Overflow.clip,
-    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
+    List<Widget> children = const <Widget>[],
   }) : super(key: key, children: children);
 
   @override
@@ -26,7 +26,7 @@ class FBStack extends FChildrenWidgetBuilder {
       textDirection: this.textDirection,
       fit: this.fit,
       overflow: this.overflow,
-      children: children ?? childrenWidget(),
+      children: children ?? this.children,
     );
   }
 }

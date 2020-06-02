@@ -17,7 +17,7 @@ class FBColumn extends FChildrenWidgetBuilder {
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
+    List<Widget> children = const <Widget>[],
   }) : super(key: key, children: children);
 
   @override
@@ -32,7 +32,7 @@ class FBColumn extends FChildrenWidgetBuilder {
       textDirection: this.textDirection,
       verticalDirection: this.verticalDirection,
       textBaseline: this.textBaseline,
-      children: children ?? childrenWidget(),
+      children: children ?? this.children,
     );
   }
 }

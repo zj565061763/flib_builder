@@ -9,53 +9,35 @@ abstract class FWidgetBuilder {
 }
 
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
-  FWidgetBuilder _child;
+  Widget child;
 
   FChildWidgetBuilder({
     Key key,
-    FWidgetBuilder child,
-  }) : super(key: key) {
-    if (child != null) {
-      _child = child;
-    }
-  }
+    this.child,
+  }) : super(key: key);
 
-  FChildWidgetBuilder child(FWidgetBuilder child) {
-    if (child != null) {
-      _child = child;
-    }
-    return this;
-  }
-
-  Widget childWidget() {
-    return _child == null ? null : _child.build();
-  }
+  @override
+  Widget build({Widget child});
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
-  List<FWidgetBuilder> _children;
+  List<Widget> _children;
+
+  List<Widget> get children {
+    if (_children == null) {
+      _children = const <Widget>[];
+    }
+    return _children;
+  }
 
   FChildrenWidgetBuilder({
     Key key,
-    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
-  }) : super(key: key) {
-    if (children != null) {
-      _children = children;
-    }
-  }
+    List<Widget> children,
+  })  : this._children = children ?? const <Widget>[],
+        super(key: key);
 
-  FChildrenWidgetBuilder children(List<FWidgetBuilder> children) {
-    if (children != null) {
-      _children = children;
-    }
-    return this;
-  }
-
-  List<Widget> childrenWidget() {
-    final List<Widget> list = [];
-    _children.forEach((element) {
-      list.add(element.build());
-    });
-    return list;
-  }
+  @override
+  Widget build({
+    List<Widget> children,
+  });
 }

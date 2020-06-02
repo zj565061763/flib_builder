@@ -9,7 +9,7 @@ class FBSizedBox extends FChildWidgetBuilder {
     Key key,
     this.width,
     this.height,
-    FWidgetBuilder child,
+    Widget child,
   }) : super(key: key, child: child);
 
   @override
@@ -20,7 +20,7 @@ class FBSizedBox extends FChildWidgetBuilder {
       key: this.key,
       width: this.width,
       height: this.height,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
     );
   }
 }

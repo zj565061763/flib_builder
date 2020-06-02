@@ -20,7 +20,7 @@ class FBCard extends FChildWidgetBuilder {
     this.borderOnForeground = true,
     this.margin,
     this.clipBehavior,
-    FWidgetBuilder child,
+    Widget child,
     this.semanticContainer = true,
   }) : super(key: key, child: child);
 
@@ -30,7 +30,7 @@ class FBCard extends FChildWidgetBuilder {
   }) {
     return Card(
       key: this.key,
-      child: child ?? childWidget(),
+      child: child ?? this.child,
       color: this.color,
       elevation: this.elevation,
       shape: this.shape,
