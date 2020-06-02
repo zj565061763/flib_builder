@@ -10,7 +10,7 @@ abstract class FWidgetBuilder {
     this.key,
   }) : this.stateful = stateful ?? true;
 
-  FStatefulController get statefulController {
+  FStatefulController _getStatefulController() {
     if (_statefulController == null) {
       _statefulController = FStatefulController._((context) => buildImpl());
     }
@@ -19,10 +19,17 @@ abstract class FWidgetBuilder {
 
   /// 构建Widget
   Widget build() {
-    if (!stateful) {
-      return buildImpl();
+    if (stateful) {
+      return _getStatefulController()._newWidget();
     }
-    return statefulController._newWidget();
+    return buildImpl();
+  }
+
+  /// 刷新Widget
+  void update() {
+    if (stateful) {
+      _getStatefulController()._update();
+    }
   }
 
   @protected
@@ -81,7 +88,7 @@ class FStatefulController {
   }
 
   /// 刷新ui
-  bool update() {
+  bool _update() {
     final _InternalWidgetState state = _globalKey.currentState;
     if (state != null) {
       state.update();
