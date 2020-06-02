@@ -31,7 +31,7 @@ class FBContainer extends FChildWidgetBuilder {
   }) : super(key: key, child: child);
 
   @override
-  Widget build({
+  Widget buildImpl({
     Widget child,
   }) {
     return Container(

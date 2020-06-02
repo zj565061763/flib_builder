@@ -17,7 +17,7 @@ class FBStack extends FChildrenWidgetBuilder {
   }) : super(key: key, children: children);
 
   @override
-  Widget build({
+  Widget buildImpl({
     List<Widget> children,
   }) {
     return Stack(

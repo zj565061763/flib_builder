@@ -77,7 +77,7 @@ class FBMaterialButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget build({
+  Widget buildImpl({
     Widget child,
   }) {
     return MaterialButton(
@@ -164,7 +164,7 @@ class FBFlatButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget build({
+  Widget buildImpl({
     Widget child,
   }) {
     return FlatButton(
@@ -254,7 +254,7 @@ class FBRaisedButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget build({
+  Widget buildImpl({
     Widget child,
   }) {
     return RaisedButton(
@@ -338,7 +338,7 @@ class FBOutlineButton extends _FBButton {
   }) : super(key: key, child: child);
 
   @override
-  Widget build({
+  Widget buildImpl({
     Widget child,
   }) {
     return OutlineButton(

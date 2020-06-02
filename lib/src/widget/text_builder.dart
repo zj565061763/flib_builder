@@ -34,7 +34,7 @@ class FBText extends FWidgetBuilder {
   }) : super(key: key);
 
   @override
-  Widget build() {
+  Widget buildImpl() {
     return Text(
       this.data ?? '',
       key: this.key,
@@ -83,7 +83,7 @@ class FBRichText extends FWidgetBuilder {
   }) : super(key: key);
 
   @override
-  Widget build() {
+  Widget buildImpl() {
     return RichText(
       key: this.key,
       text: this.text ?? TextSpan(text: ''),

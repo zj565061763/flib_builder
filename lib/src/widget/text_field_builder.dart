@@ -99,7 +99,7 @@ class FBTextField extends FWidgetBuilder {
   }) : super(key: key);
 
   @override
-  Widget build() {
+  Widget buildImpl() {
     return TextField(
       key: this.key,
       controller: this.controller,
