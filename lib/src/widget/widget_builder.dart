@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
-  Key key;
+  final Key key;
 
   FWidgetBuilder({this.key});
 
