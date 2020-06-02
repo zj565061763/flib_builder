@@ -1,10 +1,9 @@
-import 'package:flib_builder/src/widget/widget_builder.dart';
+import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FStackBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildrenHolder {
+class FStackBuilder extends FChildrenWidgetBuilder with FMixinKeyHolder {
   AlignmentDirectional alignment = AlignmentDirectional.topStart;
   TextDirection textDirection;
   StackFit fit = StackFit.loose;
@@ -20,7 +19,7 @@ class FStackBuilder extends FWidgetBuilder
       textDirection: this.textDirection,
       fit: this.fit,
       overflow: this.overflow,
-      children: children ?? this.children,
+      children: children ?? childrenWidget(),
     );
   }
 }

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FContainerBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FContainerBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   AlignmentGeometry alignment;
   EdgeInsetsGeometry padding;
   Color color;
@@ -33,7 +32,7 @@ class FContainerBuilder extends FWidgetBuilder
       constraints: this.constraints,
       margin: this.margin,
       transform: this.transform,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
       clipBehavior: this.clipBehavior,
     );
   }

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FColumnBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildrenHolder {
+class FColumnBuilder extends FChildrenWidgetBuilder with FMixinKeyHolder {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
   MainAxisSize mainAxisSize = MainAxisSize.max;
   CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;
@@ -24,7 +23,7 @@ class FColumnBuilder extends FWidgetBuilder
       textDirection: this.textDirection,
       verticalDirection: this.verticalDirection,
       textBaseline: this.textBaseline,
-      children: children ?? this.children,
+      children: children ?? childrenWidget(),
     );
   }
 }

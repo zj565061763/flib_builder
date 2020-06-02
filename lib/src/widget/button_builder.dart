@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FMaterialButtonBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FMaterialButtonBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -70,13 +69,12 @@ class FMaterialButtonBuilder extends FWidgetBuilder
       minWidth: this.minWidth,
       height: this.height,
       enableFeedback: this.enableFeedback,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
     );
   }
 }
 
-class FFlatButtonBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FFlatButtonBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -124,13 +122,12 @@ class FFlatButtonBuilder extends FWidgetBuilder
       focusNode: this.focusNode,
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
     );
   }
 }
 
-class FRaisedButtonBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FRaisedButtonBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -190,13 +187,12 @@ class FRaisedButtonBuilder extends FWidgetBuilder
       autofocus: this.autofocus,
       materialTapTargetSize: this.materialTapTargetSize,
       animationDuration: this.animationDuration,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
     );
   }
 }
 
-class FOutlineButtonBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FOutlineButtonBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ButtonTextTheme textTheme;
@@ -244,7 +240,7 @@ class FOutlineButtonBuilder extends FWidgetBuilder
       clipBehavior: this.clipBehavior,
       focusNode: this.focusNode,
       autofocus: this.autofocus,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
     );
   }
 }

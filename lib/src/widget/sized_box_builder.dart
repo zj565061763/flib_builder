@@ -1,10 +1,9 @@
-import 'package:flib_builder/src/widget/widget_builder.dart';
+import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FSizedBoxBuilder extends FWidgetBuilder
-    with FMixinKeyHolder, FMixinChildHolder {
+class FSizedBoxBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
   double width;
   double height;
 
@@ -16,7 +15,7 @@ class FSizedBoxBuilder extends FWidgetBuilder
       key: this.key,
       width: this.width,
       height: this.height,
-      child: child ?? this.child,
+      child: child ?? childWidget(),
     );
   }
 }
