@@ -20,6 +20,7 @@ class FBRow extends FChildrenWidgetBuilder {
     List<Widget> children = const <Widget>[],
   }) : super(key: key, children: children);
 
+  @protected
   @override
   Widget buildImpl() {
     return Row(

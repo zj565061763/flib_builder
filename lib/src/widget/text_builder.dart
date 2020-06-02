@@ -33,6 +33,7 @@ class FBText extends FWidgetBuilder {
     this.textHeightBehavior,
   }) : super(key: key);
 
+  @protected
   @override
   Widget buildImpl() {
     return Text(
@@ -82,6 +83,7 @@ class FBRichText extends FWidgetBuilder {
     this.textHeightBehavior,
   }) : super(key: key);
 
+  @protected
   @override
   Widget buildImpl() {
     return RichText(

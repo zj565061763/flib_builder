@@ -30,6 +30,7 @@ class FBContainer extends FChildWidgetBuilder {
     this.clipBehavior = Clip.none,
   }) : super(key: key, child: child);
 
+  @protected
   @override
   Widget buildImpl() {
     return Container(

@@ -24,6 +24,7 @@ class FBCard extends FChildWidgetBuilder {
     this.semanticContainer = true,
   }) : super(key: key, child: child);
 
+  @protected
   @override
   Widget buildImpl() {
     return Card(

@@ -12,6 +12,7 @@ class FBSizedBox extends FChildWidgetBuilder {
     Widget child,
   }) : super(key: key, child: child);
 
+  @protected
   @override
   Widget buildImpl() {
     return SizedBox(

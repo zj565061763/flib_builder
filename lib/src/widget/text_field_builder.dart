@@ -98,6 +98,7 @@ class FBTextField extends FWidgetBuilder {
     this.scrollPhysics,
   }) : super(key: key);
 
+  @protected
   @override
   Widget buildImpl() {
     return TextField(
