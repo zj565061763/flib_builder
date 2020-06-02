@@ -1,6 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
+import 'mixins.dart';
+
 class FRowBuilder extends FWidgetBuilder
     with FMixinKeyHolder, FMixinChildrenHolder {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;

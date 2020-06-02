@@ -1,6 +1,8 @@
 import 'package:flib_builder/src/builder.dart';
 import 'package:flutter/material.dart';
 
+import 'mixins.dart';
+
 class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
   String data;
   TextStyle style;
