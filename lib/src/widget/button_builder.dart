@@ -1,9 +1,7 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBMaterialButton extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBMaterialButton extends FChildWidgetBuilder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -25,14 +23,48 @@ class FBMaterialButton extends FChildWidgetBuilder with FMixinKeyHolder {
   EdgeInsetsGeometry padding;
   VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   FocusNode focusNode;
-  bool autofocus = false;
+  bool autofocus;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
   double minWidth;
   double height;
-  bool enableFeedback = true;
+  bool enableFeedback;
+
+  FBMaterialButton({
+    Key key,
+    this.onPressed,
+    this.onLongPress,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.focusColor,
+    this.hoverColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.elevation,
+    this.focusElevation,
+    this.hoverElevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    this.padding,
+    this.visualDensity,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    this.materialTapTargetSize,
+    this.animationDuration,
+    this.minWidth,
+    this.height,
+    this.enableFeedback = true,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({
@@ -74,7 +106,7 @@ class FBMaterialButton extends FChildWidgetBuilder with FMixinKeyHolder {
   }
 }
 
-class FBFlatButton extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBFlatButton extends FChildWidgetBuilder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -91,10 +123,35 @@ class FBFlatButton extends FChildWidgetBuilder with FMixinKeyHolder {
   EdgeInsetsGeometry padding;
   VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   FocusNode focusNode;
-  bool autofocus = false;
+  bool autofocus;
   MaterialTapTargetSize materialTapTargetSize;
+
+  FBFlatButton({
+    Key key,
+    this.onPressed,
+    this.onLongPress,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.focusColor,
+    this.hoverColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.padding,
+    this.visualDensity,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    this.materialTapTargetSize,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({
@@ -127,7 +184,7 @@ class FBFlatButton extends FChildWidgetBuilder with FMixinKeyHolder {
   }
 }
 
-class FBRaisedButton extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBRaisedButton extends FChildWidgetBuilder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ValueChanged<bool> onHighlightChanged;
@@ -149,11 +206,42 @@ class FBRaisedButton extends FChildWidgetBuilder with FMixinKeyHolder {
   EdgeInsetsGeometry padding;
   VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   FocusNode focusNode;
-  bool autofocus = false;
+  bool autofocus;
   MaterialTapTargetSize materialTapTargetSize;
   Duration animationDuration;
+
+  FBRaisedButton({
+    Key key,
+    this.onPressed,
+    this.onLongPress,
+    this.onHighlightChanged,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.disabledColor,
+    this.focusColor,
+    this.hoverColor,
+    this.highlightColor,
+    this.splashColor,
+    this.colorBrightness,
+    this.elevation,
+    this.focusElevation,
+    this.hoverElevation,
+    this.highlightElevation,
+    this.disabledElevation,
+    this.padding,
+    this.visualDensity,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    this.materialTapTargetSize,
+    this.animationDuration,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({
@@ -192,7 +280,7 @@ class FBRaisedButton extends FChildWidgetBuilder with FMixinKeyHolder {
   }
 }
 
-class FBOutlineButton extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBOutlineButton extends FChildWidgetBuilder {
   VoidCallback onPressed;
   VoidCallback onLongPress;
   ButtonTextTheme textTheme;
@@ -210,9 +298,34 @@ class FBOutlineButton extends FChildWidgetBuilder with FMixinKeyHolder {
   EdgeInsetsGeometry padding;
   VisualDensity visualDensity;
   ShapeBorder shape;
-  Clip clipBehavior = Clip.none;
+  Clip clipBehavior;
   FocusNode focusNode;
-  bool autofocus = false;
+  bool autofocus;
+
+  FBOutlineButton({
+    Key key,
+    this.onPressed,
+    this.onLongPress,
+    this.textTheme,
+    this.textColor,
+    this.disabledTextColor,
+    this.color,
+    this.focusColor,
+    this.hoverColor,
+    this.highlightColor,
+    this.splashColor,
+    this.highlightElevation,
+    this.borderSide,
+    this.disabledBorderColor,
+    this.highlightedBorderColor,
+    this.padding,
+    this.visualDensity,
+    this.shape,
+    this.clipBehavior = Clip.none,
+    this.focusNode,
+    this.autofocus = false,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({

@@ -1,11 +1,16 @@
 import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBSizedBox extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBSizedBox extends FChildWidgetBuilder {
   double width;
   double height;
+
+  FBSizedBox({
+    Key key,
+    this.width,
+    this.height,
+    FWidgetBuilder child,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({

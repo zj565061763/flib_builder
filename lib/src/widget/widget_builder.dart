@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
+  Key key;
+
+  FWidgetBuilder({this.key});
+
   Widget build();
 }
 
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
   FWidgetBuilder _child;
+
+  FChildWidgetBuilder({
+    Key key,
+    FWidgetBuilder child,
+  }) : super(key: key) {
+    if (child != null) {
+      _child = child;
+    }
+  }
 
   FChildWidgetBuilder child(FWidgetBuilder child) {
     if (child != null) {
@@ -20,7 +33,16 @@ abstract class FChildWidgetBuilder extends FWidgetBuilder {
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
-  List<FWidgetBuilder> _children = const <FWidgetBuilder>[];
+  List<FWidgetBuilder> _children;
+
+  FChildrenWidgetBuilder({
+    Key key,
+    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
+  }) : super(key: key) {
+    if (children != null) {
+      _children = children;
+    }
+  }
 
   FChildrenWidgetBuilder children(List<FWidgetBuilder> children) {
     if (children != null) {

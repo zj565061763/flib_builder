@@ -1,17 +1,28 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBCard extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBCard extends FChildWidgetBuilder {
   Color color;
   Color shadowColor;
   double elevation;
   ShapeBorder shape;
-  bool borderOnForeground = true;
+  bool borderOnForeground;
   EdgeInsetsGeometry margin;
   Clip clipBehavior;
-  bool semanticContainer = true;
+  bool semanticContainer;
+
+  FBCard({
+    Key key,
+    this.color,
+    this.shadowColor,
+    this.elevation,
+    this.shape,
+    this.borderOnForeground = true,
+    this.margin,
+    this.clipBehavior,
+    FWidgetBuilder child,
+    this.semanticContainer = true,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({

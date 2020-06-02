@@ -1,15 +1,24 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBColumn extends FChildrenWidgetBuilder with FMixinKeyHolder {
-  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
-  MainAxisSize mainAxisSize = MainAxisSize.max;
-  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;
+class FBColumn extends FChildrenWidgetBuilder {
+  MainAxisAlignment mainAxisAlignment;
+  MainAxisSize mainAxisSize;
+  CrossAxisAlignment crossAxisAlignment;
   TextDirection textDirection;
-  VerticalDirection verticalDirection = VerticalDirection.down;
+  VerticalDirection verticalDirection;
   TextBaseline textBaseline;
+
+  FBColumn({
+    Key key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline,
+    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
+  }) : super(key: key, children: children);
 
   @override
   Widget build({

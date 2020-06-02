@@ -1,13 +1,20 @@
 import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBStack extends FChildrenWidgetBuilder with FMixinKeyHolder {
-  AlignmentDirectional alignment = AlignmentDirectional.topStart;
+class FBStack extends FChildrenWidgetBuilder {
+  AlignmentDirectional alignment;
   TextDirection textDirection;
-  StackFit fit = StackFit.loose;
-  Overflow overflow = Overflow.clip;
+  StackFit fit;
+  Overflow overflow;
+
+  FBStack({
+    Key key,
+    this.alignment = AlignmentDirectional.topStart,
+    this.textDirection,
+    this.fit = StackFit.loose,
+    this.overflow = Overflow.clip,
+    List<FWidgetBuilder> children = const <FWidgetBuilder>[],
+  }) : super(key: key, children: children);
 
   @override
   Widget build({

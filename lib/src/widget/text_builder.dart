@@ -1,9 +1,7 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBText extends FWidgetBuilder with FMixinKeyHolder {
+class FBText extends FWidgetBuilder {
   String data;
   TextStyle style;
   StrutStyle strutStyle;
@@ -17,6 +15,23 @@ class FBText extends FWidgetBuilder with FMixinKeyHolder {
   String semanticsLabel;
   TextWidthBasis textWidthBasis;
   TextHeightBehavior textHeightBehavior;
+
+  FBText(
+    this.data, {
+    Key key,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.textHeightBehavior,
+  }) : super(key: key);
 
   @override
   Widget build() {
@@ -39,18 +54,33 @@ class FBText extends FWidgetBuilder with FMixinKeyHolder {
   }
 }
 
-class FRichTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
+class FBRichText extends FWidgetBuilder {
   TextSpan text;
-  TextAlign textAlign = TextAlign.start;
+  TextAlign textAlign;
   TextDirection textDirection;
   bool softWrap = true;
-  TextOverflow overflow = TextOverflow.clip;
-  double textScaleFactor = 1.0;
+  TextOverflow overflow;
+  double textScaleFactor;
   int maxLines;
   Locale locale;
   StrutStyle strutStyle;
-  TextWidthBasis textWidthBasis = TextWidthBasis.parent;
+  TextWidthBasis textWidthBasis;
   TextHeightBehavior textHeightBehavior;
+
+  FBRichText({
+    Key key,
+    @required this.text,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.softWrap = true,
+    this.overflow = TextOverflow.clip,
+    this.textScaleFactor = 1.0,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+    this.textWidthBasis = TextWidthBasis.parent,
+    this.textHeightBehavior,
+  }) : super(key: key);
 
   @override
   Widget build() {

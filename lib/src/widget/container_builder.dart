@@ -1,9 +1,7 @@
 import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
-import 'mixins.dart';
-
-class FBContainer extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBContainer extends FChildWidgetBuilder {
   AlignmentGeometry alignment;
   EdgeInsetsGeometry padding;
   Color color;
@@ -15,6 +13,22 @@ class FBContainer extends FChildWidgetBuilder with FMixinKeyHolder {
   EdgeInsetsGeometry margin;
   Matrix4 transform;
   Clip clipBehavior = Clip.none;
+
+  FBContainer({
+    Key key,
+    this.alignment,
+    this.padding,
+    this.color,
+    this.decoration,
+    this.foregroundDecoration,
+    this.width,
+    this.height,
+    this.constraints,
+    this.margin,
+    this.transform,
+    FWidgetBuilder child,
+    this.clipBehavior = Clip.none,
+  }) : super(key: key, child: child);
 
   @override
   Widget build({
