@@ -6,9 +6,9 @@ abstract class FWidgetBuilder {
   FStatefulController _statefulController;
 
   FWidgetBuilder({
+    bool stateful,
     this.key,
-    this.stateful = true,
-  }) : assert(stateful != null);
+  }) : this.stateful = stateful ?? true;
 
   FStatefulController get statefulController {
     if (_statefulController == null) {
@@ -33,9 +33,13 @@ abstract class FChildWidgetBuilder extends FWidgetBuilder {
   Widget child;
 
   FChildWidgetBuilder({
+    bool stateful,
     Key key,
     this.child,
-  }) : super(key: key);
+  }) : super(
+          stateful: stateful,
+          key: key,
+        );
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
@@ -49,10 +53,14 @@ abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
   }
 
   FChildrenWidgetBuilder({
+    bool stateful,
     Key key,
     List<Widget> children,
   })  : this._children = children ?? const <Widget>[],
-        super(key: key);
+        super(
+          stateful: stateful,
+          key: key,
+        );
 }
 
 //---------- stateful controller ----------

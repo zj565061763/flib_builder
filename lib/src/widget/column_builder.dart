@@ -10,6 +10,7 @@ class FBColumn extends FChildrenWidgetBuilder {
   TextBaseline textBaseline;
 
   FBColumn({
+    bool stateful,
     Key key,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
@@ -18,7 +19,7 @@ class FBColumn extends FChildrenWidgetBuilder {
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
     List<Widget> children = const <Widget>[],
-  }) : super(key: key, children: children);
+  }) : super(stateful: stateful, key: key, children: children);
 
   @protected
   @override
