@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FContainerBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBContainer extends FChildWidgetBuilder with FMixinKeyHolder {
   AlignmentGeometry alignment;
   EdgeInsetsGeometry padding;
   Color color;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FTextBuilder extends FWidgetBuilder with FMixinKeyHolder {
+class FBText extends FWidgetBuilder with FMixinKeyHolder {
   String data;
   TextStyle style;
   StrutStyle strutStyle;

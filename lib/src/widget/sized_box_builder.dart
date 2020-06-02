@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FSizedBoxBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBSizedBox extends FChildWidgetBuilder with FMixinKeyHolder {
   double width;
   double height;
 

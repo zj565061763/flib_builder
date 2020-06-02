@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FRowBuilder extends FChildrenWidgetBuilder with FMixinKeyHolder {
+class FBRow extends FChildrenWidgetBuilder with FMixinKeyHolder {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
   MainAxisSize mainAxisSize = MainAxisSize.max;
   CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;

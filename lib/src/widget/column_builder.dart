@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FColumnBuilder extends FChildrenWidgetBuilder with FMixinKeyHolder {
+class FBColumn extends FChildrenWidgetBuilder with FMixinKeyHolder {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
   MainAxisSize mainAxisSize = MainAxisSize.max;
   CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;

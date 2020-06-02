@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FCardBuilder extends FChildWidgetBuilder with FMixinKeyHolder {
+class FBCard extends FChildWidgetBuilder with FMixinKeyHolder {
   Color color;
   Color shadowColor;
   double elevation;

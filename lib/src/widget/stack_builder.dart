@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'mixins.dart';
 
-class FStackBuilder extends FChildrenWidgetBuilder with FMixinKeyHolder {
+class FBStack extends FChildrenWidgetBuilder with FMixinKeyHolder {
   AlignmentDirectional alignment = AlignmentDirectional.topStart;
   TextDirection textDirection;
   StackFit fit = StackFit.loose;
