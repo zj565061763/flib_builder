@@ -168,6 +168,12 @@ class FBFlatButton extends _FBButton {
   @protected
   @override
   Widget buildImpl() {
+    if (textColor != null) {
+      if (disabledTextColor == null) {
+        disabledTextColor = textColor.withOpacity(0.4);
+      }
+    }
+
     return FlatButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
@@ -258,6 +264,26 @@ class FBRaisedButton extends _FBButton {
   @protected
   @override
   Widget buildImpl() {
+    if (color != null) {
+      if (disabledColor == null) {
+        disabledColor = color.withOpacity(0.4);
+      }
+
+      if (colorBrightness == null) {
+        colorBrightness = ThemeData.estimateBrightnessForColor(color);
+      }
+
+      if (colorBrightness == Brightness.dark) {
+        if (textColor == null) {
+          textColor = Colors.white;
+        }
+
+        if (disabledTextColor == null) {
+          disabledTextColor = Colors.white;
+        }
+      }
+    }
+
     return RaisedButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
