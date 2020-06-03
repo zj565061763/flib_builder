@@ -368,6 +368,27 @@ class FBOutlineButton extends _FBButton {
   @protected
   @override
   Widget buildImpl() {
+    if (textColor != null) {
+      if (disabledTextColor == null) {
+        disabledTextColor = textColor.withOpacity(0.4);
+      }
+
+      if (borderSide == null) {
+        borderSide = BorderSide(
+          color: textColor,
+          width: 1,
+        );
+      }
+
+      if (disabledBorderColor == null) {
+        disabledBorderColor = textColor.withOpacity(0.4);
+      }
+
+      if (highlightedBorderColor == null) {
+        highlightedBorderColor = textColor;
+      }
+    }
+
     return OutlineButton(
       key: this.key,
       onPressed: extCanPress ? this.onPressed : null,
