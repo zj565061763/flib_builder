@@ -2,8 +2,8 @@ import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 abstract class _FBButton extends FChildWidgetBuilder {
-  bool extCanPress = false;
-  bool extCanLongPress = false;
+  bool extCanPress = true;
+  bool extCanLongPress = true;
 }
 
 class FBMaterialButton extends _FBButton {
