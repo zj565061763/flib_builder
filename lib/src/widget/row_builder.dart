@@ -10,16 +10,13 @@ class FBRow extends FChildrenWidgetBuilder {
   TextBaseline textBaseline;
 
   FBRow({
-    bool stateful,
-    Key key,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.textDirection,
     this.verticalDirection = VerticalDirection.down,
     this.textBaseline,
-    List<Widget> children = const <Widget>[],
-  }) : super(stateful: stateful, key: key, children: children);
+  });
 
   @protected
   @override

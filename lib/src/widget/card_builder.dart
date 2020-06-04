@@ -12,8 +12,6 @@ class FBCard extends FChildWidgetBuilder {
   bool semanticContainer;
 
   FBCard({
-    bool stateful,
-    Key key,
     this.color,
     this.shadowColor,
     this.elevation,
@@ -21,9 +19,8 @@ class FBCard extends FChildWidgetBuilder {
     this.borderOnForeground = true,
     this.margin,
     this.clipBehavior,
-    Widget child,
     this.semanticContainer = true,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override

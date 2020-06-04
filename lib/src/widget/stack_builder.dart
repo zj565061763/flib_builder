@@ -8,14 +8,11 @@ class FBStack extends FChildrenWidgetBuilder {
   Overflow overflow;
 
   FBStack({
-    bool stateful,
-    Key key,
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.fit = StackFit.loose,
     this.overflow = Overflow.clip,
-    List<Widget> children = const <Widget>[],
-  }) : super(stateful: stateful, key: key, children: children);
+  });
 
   @protected
   @override

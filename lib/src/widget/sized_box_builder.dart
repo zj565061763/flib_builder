@@ -6,12 +6,9 @@ class FBSizedBox extends FChildWidgetBuilder {
   double height;
 
   FBSizedBox({
-    bool stateful,
-    Key key,
     this.width,
     this.height,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override

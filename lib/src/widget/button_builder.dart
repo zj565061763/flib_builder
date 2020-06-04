@@ -4,12 +4,6 @@ import 'package:flutter/material.dart';
 abstract class _FBButton extends FChildWidgetBuilder {
   bool extCanPress = false;
   bool extCanLongPress = false;
-
-  _FBButton({
-    bool stateful,
-    Key key,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
 }
 
 class FBMaterialButton extends _FBButton {
@@ -44,8 +38,6 @@ class FBMaterialButton extends _FBButton {
   bool enableFeedback;
 
   FBMaterialButton({
-    bool stateful,
-    Key key,
     this.onPressed,
     this.onLongPress,
     this.onHighlightChanged,
@@ -75,8 +67,7 @@ class FBMaterialButton extends _FBButton {
     this.minWidth,
     this.height,
     this.enableFeedback = true,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override
@@ -140,8 +131,6 @@ class FBFlatButton extends _FBButton {
   MaterialTapTargetSize materialTapTargetSize;
 
   FBFlatButton({
-    bool stateful,
-    Key key,
     this.onPressed,
     this.onLongPress,
     this.onHighlightChanged,
@@ -162,8 +151,7 @@ class FBFlatButton extends _FBButton {
     this.focusNode,
     this.autofocus = false,
     this.materialTapTargetSize,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override
@@ -230,8 +218,6 @@ class FBRaisedButton extends _FBButton {
   Duration animationDuration;
 
   FBRaisedButton({
-    bool stateful,
-    Key key,
     this.onPressed,
     this.onLongPress,
     this.onHighlightChanged,
@@ -258,8 +244,7 @@ class FBRaisedButton extends _FBButton {
     this.autofocus = false,
     this.materialTapTargetSize,
     this.animationDuration,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override
@@ -340,8 +325,6 @@ class FBOutlineButton extends _FBButton {
   bool autofocus;
 
   FBOutlineButton({
-    bool stateful,
-    Key key,
     this.onPressed,
     this.onLongPress,
     this.textTheme,
@@ -362,8 +345,7 @@ class FBOutlineButton extends _FBButton {
     this.clipBehavior = Clip.none,
     this.focusNode,
     this.autofocus = false,
-    Widget child,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override

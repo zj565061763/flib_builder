@@ -15,8 +15,6 @@ class FBContainer extends FChildWidgetBuilder {
   Clip clipBehavior = Clip.none;
 
   FBContainer({
-    bool stateful,
-    Key key,
     this.alignment,
     this.padding,
     this.color,
@@ -27,9 +25,8 @@ class FBContainer extends FChildWidgetBuilder {
     this.constraints,
     this.margin,
     this.transform,
-    Widget child,
     this.clipBehavior = Clip.none,
-  }) : super(stateful: stateful, key: key, child: child);
+  });
 
   @protected
   @override

@@ -26,7 +26,6 @@ class FBImageNetwork extends FWidgetBuilder {
   int cacheHeight;
 
   FBImageNetwork({
-    Key key,
     this.src,
     this.scale = 1.0,
     this.frameBuilder,
@@ -48,7 +47,7 @@ class FBImageNetwork extends FWidgetBuilder {
     this.headers,
     this.cacheWidth,
     this.cacheHeight,
-  }) : super(key: key);
+  });
 
   @protected
   @override

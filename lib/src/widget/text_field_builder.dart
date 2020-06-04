@@ -52,8 +52,6 @@ class FBTextField extends FWidgetBuilder {
   ScrollPhysics scrollPhysics;
 
   FBTextField({
-    bool stateful,
-    Key key,
     this.controller,
     this.focusNode,
     this.decoration = const InputDecoration(),
@@ -97,7 +95,7 @@ class FBTextField extends FWidgetBuilder {
     this.buildCounter,
     this.scrollController,
     this.scrollPhysics,
-  }) : super(stateful: stateful, key: key);
+  });
 
   @protected
   @override

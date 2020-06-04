@@ -18,8 +18,6 @@ class FBText extends FWidgetBuilder {
 
   FBText(
     this.data, {
-    bool stateful,
-    Key key,
     this.style,
     this.strutStyle,
     this.textAlign,
@@ -32,7 +30,7 @@ class FBText extends FWidgetBuilder {
     this.semanticsLabel,
     this.textWidthBasis,
     this.textHeightBehavior,
-  }) : super(stateful: stateful, key: key);
+  });
 
   @protected
   @override
@@ -70,8 +68,6 @@ class FBRichText extends FWidgetBuilder {
   TextHeightBehavior textHeightBehavior;
 
   FBRichText({
-    bool stateful,
-    Key key,
     @required this.text,
     this.textAlign = TextAlign.start,
     this.textDirection,
@@ -83,7 +79,7 @@ class FBRichText extends FWidgetBuilder {
     this.strutStyle,
     this.textWidthBasis = TextWidthBasis.parent,
     this.textHeightBehavior,
-  }) : super(stateful: stateful, key: key);
+  });
 
   @protected
   @override

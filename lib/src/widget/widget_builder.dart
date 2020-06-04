@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
-  final Key key;
-  final bool stateful;
-  FStatefulController _statefulController;
+  Key key;
 
-  FWidgetBuilder({
-    bool stateful,
-    this.key,
-  }) : this.stateful = stateful ?? true;
+  bool stateful = true;
+  FStatefulController _statefulController;
 
   FStatefulController _getStatefulController() {
     if (_statefulController == null) {
@@ -38,15 +34,6 @@ abstract class FWidgetBuilder {
 
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
   Widget child;
-
-  FChildWidgetBuilder({
-    bool stateful,
-    Key key,
-    this.child,
-  }) : super(
-          stateful: stateful,
-          key: key,
-        );
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
@@ -59,15 +46,9 @@ abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
     return _children;
   }
 
-  FChildrenWidgetBuilder({
-    bool stateful,
-    Key key,
-    List<Widget> children,
-  })  : this._children = children ?? const <Widget>[],
-        super(
-          stateful: stateful,
-          key: key,
-        );
+  set children(List<Widget> value) {
+    _children = value;
+  }
 }
 
 //---------- stateful controller ----------
