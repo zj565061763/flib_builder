@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class FBTextField extends FWidgetBuilder {
-  TextEditingController controller;
+  TextEditingController _controller;
   FocusNode focusNode;
   InputDecoration decoration;
   TextInputType keyboardType;
@@ -51,8 +51,19 @@ class FBTextField extends FWidgetBuilder {
   ScrollController scrollController;
   ScrollPhysics scrollPhysics;
 
+  TextEditingController get controller {
+    if (_controller == null) {
+      _controller = TextEditingController();
+    }
+    return _controller;
+  }
+
+  set controller(TextEditingController value) {
+    _controller = value;
+  }
+
   FBTextField({
-    this.controller,
+    TextEditingController controller,
     this.focusNode,
     this.decoration = const InputDecoration(),
     this.keyboardType,
@@ -95,7 +106,7 @@ class FBTextField extends FWidgetBuilder {
     this.buildCounter,
     this.scrollController,
     this.scrollPhysics,
-  });
+  }) : this._controller = controller;
 
   @protected
   @override
