@@ -8,7 +8,9 @@ abstract class FWidgetBuilder {
 
   FStatefulController _getStatefulController() {
     if (_statefulController == null) {
-      _statefulController = FStatefulController._((context) => buildImpl());
+      _statefulController = FStatefulController._((context) {
+        return buildImpl();
+      });
     }
     return _statefulController;
   }
@@ -22,9 +24,9 @@ abstract class FWidgetBuilder {
   }
 
   /// 刷新Widget
-  void update() {
+  void update({VoidCallback afterBuild}) {
     if (stateful) {
-      _getStatefulController()._update();
+      _getStatefulController()._update(afterBuild: afterBuild);
     }
   }
 
@@ -69,10 +71,10 @@ class FStatefulController {
   }
 
   /// 刷新ui
-  bool _update() {
+  bool _update({VoidCallback afterBuild}) {
     final _InternalWidgetState state = _globalKey.currentState;
     if (state != null) {
-      state.update();
+      state.update(afterBuild: afterBuild);
       return true;
     }
     return false;
@@ -93,8 +95,15 @@ class _InternalWidget extends StatefulWidget {
 }
 
 class _InternalWidgetState extends State<_InternalWidget> {
-  void update() {
+  void update({VoidCallback afterBuild}) {
     if (mounted) {
+      if (afterBuild != null) {
+        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+          if (afterBuild != null) {
+            afterBuild();
+          }
+        });
+      }
       setState(() {});
     }
   }
