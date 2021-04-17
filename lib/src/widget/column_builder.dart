@@ -5,9 +5,9 @@ class FBColumn extends FChildrenWidgetBuilder {
   MainAxisAlignment mainAxisAlignment;
   MainAxisSize mainAxisSize;
   CrossAxisAlignment crossAxisAlignment;
-  TextDirection textDirection;
+  TextDirection? textDirection;
   VerticalDirection verticalDirection;
-  TextBaseline textBaseline;
+  TextBaseline? textBaseline;
 
   FBColumn({
     this.mainAxisAlignment = MainAxisAlignment.start,
