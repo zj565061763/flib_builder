@@ -15,21 +15,6 @@ class FBContainer extends FChildWidgetBuilder {
   AlignmentGeometry? transformAlignment;
   Clip clipBehavior = Clip.none;
 
-  FBContainer({
-    this.alignment,
-    this.padding,
-    this.color,
-    this.decoration,
-    this.foregroundDecoration,
-    this.width,
-    this.height,
-    this.constraints,
-    this.margin,
-    this.transform,
-    this.transformAlignment,
-    this.clipBehavior = Clip.none,
-  });
-
   @protected
   @override
   Widget buildImpl() {
