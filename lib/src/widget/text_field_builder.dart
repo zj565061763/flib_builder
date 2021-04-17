@@ -3,110 +3,72 @@ import 'dart:ui';
 import 'package:flib_builder/flib_builder.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class FBTextField extends FWidgetBuilder {
-  TextEditingController _controller;
-  FocusNode focusNode;
-  InputDecoration decoration;
-  TextInputType keyboardType;
-  TextInputAction textInputAction;
-  TextCapitalization textCapitalization;
-  TextStyle style;
-  StrutStyle strutStyle;
-  TextAlign textAlign;
-  TextAlignVertical textAlignVertical;
-  TextDirection textDirection;
-  bool readOnly;
-  ToolbarOptions toolbarOptions;
-  bool showCursor;
-  bool autofocus;
-  bool obscureText;
-  bool autocorrect;
-  SmartDashesType smartDashesType;
-  SmartQuotesType smartQuotesType;
-  bool enableSuggestions;
-  int maxLines;
-  int minLines;
-  bool expands;
-  int maxLength;
-  bool maxLengthEnforced;
-  ValueChanged<String> onChanged;
-  VoidCallback onEditingComplete;
-  ValueChanged<String> onSubmitted;
-  List<TextInputFormatter> inputFormatters;
-  bool enabled;
-  double cursorWidth;
-  Radius cursorRadius;
-  Color cursorColor;
-  BoxHeightStyle selectionHeightStyle;
-  BoxWidthStyle selectionWidthStyle;
-  Brightness keyboardAppearance;
-  EdgeInsets scrollPadding;
-  DragStartBehavior dragStartBehavior;
-  bool enableInteractiveSelection;
-  GestureTapCallback onTap;
-  InputCounterWidgetBuilder buildCounter;
-  ScrollController scrollController;
-  ScrollPhysics scrollPhysics;
+  TextEditingController? _controller;
+  FocusNode? focusNode;
+  InputDecoration? decoration = const InputDecoration();
+  TextInputType? keyboardType;
+  TextInputAction? textInputAction;
+  TextCapitalization textCapitalization = TextCapitalization.none;
+  TextStyle? style;
+  StrutStyle? strutStyle;
+  TextAlign textAlign = TextAlign.start;
+  TextAlignVertical? textAlignVertical;
+  TextDirection? textDirection;
+  bool readOnly = false;
+  ToolbarOptions? toolbarOptions;
+  bool? showCursor;
+  bool autofocus = false;
+  String obscuringCharacter = "•";
+  bool obscureText = false;
+  bool autocorrect = true;
+  SmartDashesType? smartDashesType;
+  SmartQuotesType? smartQuotesType;
+  bool enableSuggestions = true;
+  int maxLines = 1;
+  int? minLines;
+  bool expands = false;
+  int? maxLength;
+  MaxLengthEnforcement? maxLengthEnforcement;
+  ValueChanged<String>? onChanged;
+  VoidCallback? onEditingComplete;
+  ValueChanged<String>? onSubmitted;
+  AppPrivateCommandCallback? onAppPrivateCommand;
+  List<TextInputFormatter>? inputFormatters;
+  bool? enabled;
+  double cursorWidth = 2.0;
+  double? cursorHeight;
+  Radius? cursorRadius;
+  Color? cursorColor;
+  BoxHeightStyle selectionHeightStyle = BoxHeightStyle.tight;
+  BoxWidthStyle selectionWidthStyle = BoxWidthStyle.tight;
+  Brightness? keyboardAppearance;
+  EdgeInsets scrollPadding = const EdgeInsets.all(20.0);
+  DragStartBehavior dragStartBehavior = DragStartBehavior.start;
+  bool enableInteractiveSelection = true;
+  TextSelectionControls? selectionControls;
+  GestureTapCallback? onTap;
+  MouseCursor? mouseCursor;
+  InputCounterWidgetBuilder? buildCounter;
+  ScrollController? scrollController;
+  ScrollPhysics? scrollPhysics;
+  Iterable<String>? autofillHints;
+  String? restorationId;
 
   TextEditingController get controller {
     if (_controller == null) {
       _controller = TextEditingController();
     }
-    return _controller;
+    return _controller!;
   }
 
   set controller(TextEditingController value) {
     _controller = value;
   }
-
-  FBTextField({
-    TextEditingController controller,
-    this.focusNode,
-    this.decoration = const InputDecoration(),
-    this.keyboardType,
-    this.textInputAction,
-    this.textCapitalization = TextCapitalization.none,
-    this.style,
-    this.strutStyle,
-    this.textAlign = TextAlign.start,
-    this.textAlignVertical,
-    this.textDirection,
-    this.readOnly = false,
-    this.toolbarOptions,
-    this.showCursor,
-    this.autofocus = false,
-    this.obscureText = false,
-    this.autocorrect = true,
-    this.smartDashesType,
-    this.smartQuotesType,
-    this.enableSuggestions = true,
-    this.maxLines = 1,
-    this.minLines,
-    this.expands = false,
-    this.maxLength,
-    this.maxLengthEnforced = true,
-    this.onChanged,
-    this.onEditingComplete,
-    this.onSubmitted,
-    this.inputFormatters,
-    this.enabled,
-    this.cursorWidth = 2.0,
-    this.cursorRadius,
-    this.cursorColor,
-    this.selectionHeightStyle = BoxHeightStyle.tight,
-    this.selectionWidthStyle = BoxWidthStyle.tight,
-    this.keyboardAppearance,
-    this.scrollPadding = const EdgeInsets.all(20.0),
-    this.dragStartBehavior = DragStartBehavior.start,
-    this.enableInteractiveSelection = true,
-    this.onTap,
-    this.buildCounter,
-    this.scrollController,
-    this.scrollPhysics,
-  }) : this._controller = controller;
 
   @protected
   @override
@@ -128,6 +90,7 @@ class FBTextField extends FWidgetBuilder {
       toolbarOptions: this.toolbarOptions,
       showCursor: this.showCursor,
       autofocus: this.autofocus,
+      obscuringCharacter: this.obscuringCharacter,
       obscureText: this.obscureText,
       autocorrect: this.autocorrect,
       smartDashesType: this.smartDashesType,
@@ -137,13 +100,15 @@ class FBTextField extends FWidgetBuilder {
       minLines: this.minLines,
       expands: this.expands,
       maxLength: this.maxLength,
-      maxLengthEnforced: this.maxLengthEnforced,
+      maxLengthEnforcement: this.maxLengthEnforcement,
       onChanged: this.onChanged,
       onEditingComplete: this.onEditingComplete,
       onSubmitted: this.onSubmitted,
+      onAppPrivateCommand: this.onAppPrivateCommand,
       inputFormatters: this.inputFormatters,
       enabled: this.enabled,
       cursorWidth: this.cursorWidth,
+      cursorHeight: this.cursorHeight,
       cursorRadius: this.cursorRadius,
       cursorColor: this.cursorColor,
       selectionHeightStyle: this.selectionHeightStyle,
@@ -152,10 +117,14 @@ class FBTextField extends FWidgetBuilder {
       scrollPadding: this.scrollPadding,
       dragStartBehavior: this.dragStartBehavior,
       enableInteractiveSelection: this.enableInteractiveSelection,
+      selectionControls: this.selectionControls,
       onTap: this.onTap,
+      mouseCursor: this.mouseCursor,
       buildCounter: this.buildCounter,
       scrollController: this.scrollController,
       scrollPhysics: this.scrollPhysics,
+      autofillHints: this.autofillHints,
+      restorationId: this.restorationId,
     );
   }
 }
