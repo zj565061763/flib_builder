@@ -42,18 +42,7 @@ abstract class FChildWidgetBuilder extends FWidgetBuilder {
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
-  List<Widget>? _children;
-
-  List<Widget> get children {
-    if (_children == null) {
-      _children = const <Widget>[];
-    }
-    return _children!;
-  }
-
-  set children(List<Widget> value) {
-    _children = value;
-  }
+  List<Widget> children = const <Widget>[];
 }
 
 //---------- stateful controller ----------
