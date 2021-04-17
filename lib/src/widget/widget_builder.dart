@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
-  Key key;
+  Key? key;
 
   bool stateful = true;
-  FStatefulController _statefulController;
+  _StatefulController? _statefulController;
 
-  FStatefulController _getStatefulController() {
+  _StatefulController _getStatefulController() {
     if (_statefulController == null) {
-      _statefulController = FStatefulController._((context) {
+      _statefulController = _StatefulController._((context) {
         return buildImpl();
       });
     }
-    return _statefulController;
+    return _statefulController!;
   }
 
   /// 构建Widget
   Widget build() {
     if (stateful) {
       return _getStatefulController()._newWidget();
+    } else {
+      return buildImpl();
     }
-    return buildImpl();
   }
 
   /// 刷新Widget
-  void update({VoidCallback afterBuild}) {
+  bool update() {
     if (stateful) {
-      _getStatefulController()._update(afterBuild: afterBuild);
+      return _getStatefulController()._update();
     }
+    return false;
   }
 
   @protected
@@ -35,17 +37,17 @@ abstract class FWidgetBuilder {
 }
 
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
-  Widget child;
+  Widget? child;
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
-  List<Widget> _children;
+  List<Widget>? _children;
 
   List<Widget> get children {
     if (_children == null) {
       _children = const <Widget>[];
     }
-    return _children;
+    return _children!;
   }
 
   set children(List<Widget> value) {
@@ -55,55 +57,48 @@ abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
 
 //---------- stateful controller ----------
 
-class FStatefulController {
-  final GlobalKey<_InternalWidgetState> _globalKey = GlobalKey();
+class _StatefulController {
+  final GlobalKey<_InternalStatefulWidgetState> _globalKey = GlobalKey();
   final WidgetBuilder _builder;
 
-  FStatefulController._(this._builder) : assert(_builder != null);
+  _StatefulController._(this._builder);
 
   /// 创建一个ui返回
   StatefulWidget _newWidget() {
-    assert(this._builder != null);
-    return _InternalWidget(
+    return _InternalStatefulWidget(
       builder: _builder,
       key: _globalKey,
     );
   }
 
   /// 刷新ui
-  bool _update({VoidCallback afterBuild}) {
-    final _InternalWidgetState state = _globalKey.currentState;
-    if (state != null) {
-      state.update(afterBuild: afterBuild);
-      return true;
+  bool _update() {
+    final _InternalStatefulWidgetState? state = _globalKey.currentState;
+    if (state == null) {
+      return false;
     }
-    return false;
+
+    state.update();
+    return true;
   }
 }
 
-class _InternalWidget extends StatefulWidget {
+class _InternalStatefulWidget extends StatefulWidget {
   final WidgetBuilder builder;
 
-  _InternalWidget({
-    @required this.builder,
-    Key key,
-  })  : assert(builder != null),
-        super(key: key);
+  _InternalStatefulWidget({
+    required this.builder,
+    required Key key,
+  }) : super(key: key);
 
   @override
-  _InternalWidgetState createState() => _InternalWidgetState();
+  _InternalStatefulWidgetState createState() => _InternalStatefulWidgetState();
 }
 
-class _InternalWidgetState extends State<_InternalWidget> {
-  void update({VoidCallback afterBuild}) {
+class _InternalStatefulWidgetState extends State<_InternalStatefulWidget> {
+  /// 刷新
+  void update() {
     if (mounted) {
-      if (afterBuild != null) {
-        WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-          if (afterBuild != null) {
-            afterBuild();
-          }
-        });
-      }
       setState(() {});
     }
   }

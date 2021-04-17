@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 
 class FBStack extends FChildrenWidgetBuilder {
   AlignmentDirectional alignment;
-  TextDirection textDirection;
+  TextDirection? textDirection;
   StackFit fit;
-  Overflow overflow;
+  Clip clipBehavior;
 
   FBStack({
     this.alignment = AlignmentDirectional.topStart,
     this.textDirection,
     this.fit = StackFit.loose,
-    this.overflow = Overflow.clip,
+    this.clipBehavior = Clip.hardEdge,
   });
 
   @protected
@@ -22,7 +22,7 @@ class FBStack extends FChildrenWidgetBuilder {
       alignment: this.alignment,
       textDirection: this.textDirection,
       fit: this.fit,
-      overflow: this.overflow,
+      clipBehavior: this.clipBehavior,
       children: this.children,
     );
   }
