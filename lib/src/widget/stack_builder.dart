@@ -2,17 +2,10 @@ import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
 class FBStack extends FChildrenWidgetBuilder {
-  AlignmentDirectional alignment;
+  AlignmentDirectional alignment = AlignmentDirectional.topStart;
   TextDirection? textDirection;
-  StackFit fit;
-  Clip clipBehavior;
-
-  FBStack({
-    this.alignment = AlignmentDirectional.topStart,
-    this.textDirection,
-    this.fit = StackFit.loose,
-    this.clipBehavior = Clip.hardEdge,
-  });
+  StackFit fit = StackFit.loose;
+  Clip clipBehavior = Clip.hardEdge;
 
   @protected
   @override
