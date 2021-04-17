@@ -2,16 +2,17 @@ import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 class FBContainer extends FChildWidgetBuilder {
-  AlignmentGeometry alignment;
-  EdgeInsetsGeometry padding;
-  Color color;
-  Decoration decoration;
-  Decoration foregroundDecoration;
-  double width;
-  double height;
-  BoxConstraints constraints;
-  EdgeInsetsGeometry margin;
-  Matrix4 transform;
+  AlignmentGeometry? alignment;
+  EdgeInsetsGeometry? padding;
+  Color? color;
+  Decoration? decoration;
+  Decoration? foregroundDecoration;
+  double? width;
+  double? height;
+  BoxConstraints? constraints;
+  EdgeInsetsGeometry? margin;
+  Matrix4? transform;
+  AlignmentGeometry? transformAlignment;
   Clip clipBehavior = Clip.none;
 
   FBContainer({
@@ -25,6 +26,7 @@ class FBContainer extends FChildWidgetBuilder {
     this.constraints,
     this.margin,
     this.transform,
+    this.transformAlignment,
     this.clipBehavior = Clip.none,
   });
 
@@ -43,6 +45,7 @@ class FBContainer extends FChildWidgetBuilder {
       constraints: this.constraints,
       margin: this.margin,
       transform: this.transform,
+      transformAlignment: this.transformAlignment,
       child: this.child,
       clipBehavior: this.clipBehavior,
     );
