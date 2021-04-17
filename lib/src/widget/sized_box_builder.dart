@@ -2,8 +2,8 @@ import 'package:flib_builder/src/widget//widget_builder.dart';
 import 'package:flutter/material.dart';
 
 class FBSizedBox extends FChildWidgetBuilder {
-  double width;
-  double height;
+  double? width;
+  double? height;
 
   FBSizedBox({
     this.width,
