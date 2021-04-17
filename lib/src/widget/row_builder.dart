@@ -5,9 +5,9 @@ class FBRow extends FChildrenWidgetBuilder {
   MainAxisAlignment mainAxisAlignment;
   MainAxisSize mainAxisSize;
   CrossAxisAlignment crossAxisAlignment;
-  TextDirection textDirection;
+  TextDirection? textDirection;
   VerticalDirection verticalDirection;
-  TextBaseline textBaseline;
+  TextBaseline? textBaseline;
 
   FBRow({
     this.mainAxisAlignment = MainAxisAlignment.start,
