@@ -5,11 +5,6 @@ class FBSizedBox extends FChildWidgetBuilder {
   double? width;
   double? height;
 
-  FBSizedBox({
-    this.width,
-    this.height,
-  });
-
   @protected
   @override
   Widget buildImpl() {
