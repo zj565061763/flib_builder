@@ -2,13 +2,13 @@ import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 class FBCard extends FChildWidgetBuilder {
-  Color color;
-  Color shadowColor;
-  double elevation;
-  ShapeBorder shape;
+  Color? color;
+  Color? shadowColor;
+  double? elevation;
+  ShapeBorder? shape;
   bool borderOnForeground;
-  EdgeInsetsGeometry margin;
-  Clip clipBehavior;
+  EdgeInsetsGeometry? margin;
+  Clip? clipBehavior;
   bool semanticContainer;
 
   FBCard({
