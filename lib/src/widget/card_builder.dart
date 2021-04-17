@@ -6,21 +6,10 @@ class FBCard extends FChildWidgetBuilder {
   Color? shadowColor;
   double? elevation;
   ShapeBorder? shape;
-  bool borderOnForeground;
+  bool borderOnForeground = true;
   EdgeInsetsGeometry? margin;
   Clip? clipBehavior;
-  bool semanticContainer;
-
-  FBCard({
-    this.color,
-    this.shadowColor,
-    this.elevation,
-    this.shape,
-    this.borderOnForeground = true,
-    this.margin,
-    this.clipBehavior,
-    this.semanticContainer = true,
-  });
+  bool semanticContainer = true;
 
   @protected
   @override
