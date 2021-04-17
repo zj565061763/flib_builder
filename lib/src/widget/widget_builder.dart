@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 abstract class FWidgetBuilder {
   Key? key;
-
-  bool stateful = true;
+  final bool stateful;
   _StatefulController? _statefulController;
+
+  FWidgetBuilder({this.stateful = true});
 
   _StatefulController _getStatefulController() {
     if (_statefulController == null) {
