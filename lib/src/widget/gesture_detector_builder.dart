@@ -4,85 +4,44 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class FBGestureDetector extends FChildWidgetBuilder {
-  GestureTapDownCallback onTapDown;
-  GestureTapUpCallback onTapUp;
-  GestureTapCallback onTap;
-  GestureTapCancelCallback onTapCancel;
-  GestureTapDownCallback onSecondaryTapDown;
-  GestureTapUpCallback onSecondaryTapUp;
-  GestureTapCancelCallback onSecondaryTapCancel;
-  GestureTapCallback onDoubleTap;
-  GestureLongPressCallback onLongPress;
-  GestureLongPressStartCallback onLongPressStart;
-  GestureLongPressMoveUpdateCallback onLongPressMoveUpdate;
-  GestureLongPressUpCallback onLongPressUp;
-  GestureLongPressEndCallback onLongPressEnd;
-  GestureDragDownCallback onVerticalDragDown;
-  GestureDragStartCallback onVerticalDragStart;
-  GestureDragUpdateCallback onVerticalDragUpdate;
-  GestureDragEndCallback onVerticalDragEnd;
-  GestureDragCancelCallback onVerticalDragCancel;
-  GestureDragDownCallback onHorizontalDragDown;
-  GestureDragStartCallback onHorizontalDragStart;
-  GestureDragUpdateCallback onHorizontalDragUpdate;
-  GestureDragEndCallback onHorizontalDragEnd;
-  GestureDragCancelCallback onHorizontalDragCancel;
-  GestureForcePressStartCallback onForcePressStart;
-  GestureForcePressPeakCallback onForcePressPeak;
-  GestureForcePressUpdateCallback onForcePressUpdate;
-  GestureForcePressEndCallback onForcePressEnd;
-  GestureDragDownCallback onPanDown;
-  GestureDragStartCallback onPanStart;
-  GestureDragUpdateCallback onPanUpdate;
-  GestureDragEndCallback onPanEnd;
-  GestureDragCancelCallback onPanCancel;
-  GestureScaleStartCallback onScaleStart;
-  GestureScaleUpdateCallback onScaleUpdate;
-  GestureScaleEndCallback onScaleEnd;
-  HitTestBehavior behavior;
-  bool excludeFromSemantics;
-  DragStartBehavior dragStartBehavior;
-
-  FBGestureDetector({
-    this.onTapDown,
-    this.onTapUp,
-    this.onTap,
-    this.onTapCancel,
-    this.onSecondaryTapDown,
-    this.onSecondaryTapUp,
-    this.onSecondaryTapCancel,
-    this.onDoubleTap,
-    this.onLongPress,
-    this.onLongPressStart,
-    this.onLongPressMoveUpdate,
-    this.onLongPressUp,
-    this.onLongPressEnd,
-    this.onVerticalDragDown,
-    this.onVerticalDragStart,
-    this.onVerticalDragUpdate,
-    this.onVerticalDragEnd,
-    this.onVerticalDragCancel,
-    this.onHorizontalDragDown,
-    this.onHorizontalDragStart,
-    this.onHorizontalDragUpdate,
-    this.onHorizontalDragEnd,
-    this.onHorizontalDragCancel,
-    this.onForcePressStart,
-    this.onForcePressPeak,
-    this.onForcePressUpdate,
-    this.onForcePressEnd,
-    this.onPanDown,
-    this.onPanStart,
-    this.onPanUpdate,
-    this.onPanEnd,
-    this.onPanCancel,
-    this.onScaleStart,
-    this.onScaleUpdate,
-    this.onScaleEnd,
-    this.behavior,
-    this.excludeFromSemantics = false,
-    this.dragStartBehavior = DragStartBehavior.start,
-  });
+  GestureTapDownCallback? onTapDown;
+  GestureTapUpCallback? onTapUp;
+  GestureTapCallback? onTap;
+  GestureTapCancelCallback? onTapCancel;
+  GestureTapDownCallback? onSecondaryTapDown;
+  GestureTapUpCallback? onSecondaryTapUp;
+  GestureTapCancelCallback? onSecondaryTapCancel;
+  GestureTapCallback? onDoubleTap;
+  GestureLongPressCallback? onLongPress;
+  GestureLongPressStartCallback? onLongPressStart;
+  GestureLongPressMoveUpdateCallback? onLongPressMoveUpdate;
+  GestureLongPressUpCallback? onLongPressUp;
+  GestureLongPressEndCallback? onLongPressEnd;
+  GestureDragDownCallback? onVerticalDragDown;
+  GestureDragStartCallback? onVerticalDragStart;
+  GestureDragUpdateCallback? onVerticalDragUpdate;
+  GestureDragEndCallback? onVerticalDragEnd;
+  GestureDragCancelCallback? onVerticalDragCancel;
+  GestureDragDownCallback? onHorizontalDragDown;
+  GestureDragStartCallback? onHorizontalDragStart;
+  GestureDragUpdateCallback? onHorizontalDragUpdate;
+  GestureDragEndCallback? onHorizontalDragEnd;
+  GestureDragCancelCallback? onHorizontalDragCancel;
+  GestureForcePressStartCallback? onForcePressStart;
+  GestureForcePressPeakCallback? onForcePressPeak;
+  GestureForcePressUpdateCallback? onForcePressUpdate;
+  GestureForcePressEndCallback? onForcePressEnd;
+  GestureDragDownCallback? onPanDown;
+  GestureDragStartCallback? onPanStart;
+  GestureDragUpdateCallback? onPanUpdate;
+  GestureDragEndCallback? onPanEnd;
+  GestureDragCancelCallback? onPanCancel;
+  GestureScaleStartCallback? onScaleStart;
+  GestureScaleUpdateCallback? onScaleUpdate;
+  GestureScaleEndCallback? onScaleEnd;
+  HitTestBehavior? behavior;
+  bool excludeFromSemantics = false;
+  DragStartBehavior dragStartBehavior = DragStartBehavior.start;
 
   @override
   Widget buildImpl() {
