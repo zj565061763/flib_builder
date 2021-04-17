@@ -4,57 +4,34 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class FBImageNetwork extends FWidgetBuilder {
-  String src;
-  double scale;
-  ImageFrameBuilder frameBuilder;
-  ImageLoadingBuilder loadingBuilder;
-  ImageErrorWidgetBuilder errorBuilder;
-  String semanticLabel;
-  bool excludeFromSemantics;
-  double width;
-  double height;
-  Color color;
-  BlendMode colorBlendMode;
-  BoxFit fit;
-  AlignmentGeometry alignment;
-  ImageRepeat repeat;
-  Rect centerSlice;
-  bool matchTextDirection;
-  bool gaplessPlayback;
-  FilterQuality filterQuality;
-  Map<String, String> headers;
-  int cacheWidth;
-  int cacheHeight;
-
-  FBImageNetwork({
-    this.src,
-    this.scale = 1.0,
-    this.frameBuilder,
-    this.loadingBuilder,
-    this.errorBuilder,
-    this.semanticLabel,
-    this.excludeFromSemantics = false,
-    this.width,
-    this.height,
-    this.color,
-    this.colorBlendMode,
-    this.fit,
-    this.alignment = Alignment.center,
-    this.repeat = ImageRepeat.noRepeat,
-    this.centerSlice,
-    this.matchTextDirection = false,
-    this.gaplessPlayback = false,
-    this.filterQuality = FilterQuality.low,
-    this.headers,
-    this.cacheWidth,
-    this.cacheHeight,
-  });
+  String src = "";
+  double scale = 1.0;
+  ImageFrameBuilder? frameBuilder;
+  ImageLoadingBuilder? loadingBuilder;
+  ImageErrorWidgetBuilder? errorBuilder;
+  String? semanticLabel;
+  bool excludeFromSemantics = false;
+  double? width;
+  double? height;
+  Color? color;
+  BlendMode? colorBlendMode;
+  BoxFit? fit;
+  AlignmentGeometry alignment = Alignment.center;
+  ImageRepeat repeat = ImageRepeat.noRepeat;
+  Rect? centerSlice;
+  bool matchTextDirection = false;
+  bool gaplessPlayback = false;
+  FilterQuality filterQuality = FilterQuality.low;
+  bool isAntiAlias = false;
+  Map<String, String>? headers;
+  int? cacheWidth;
+  int? cacheHeight;
 
   @protected
   @override
   Widget buildImpl() {
     return Image.network(
-      src,
+      this.src,
       key: this.key,
       scale: this.scale,
       frameBuilder: this.frameBuilder,
@@ -73,6 +50,7 @@ class FBImageNetwork extends FWidgetBuilder {
       matchTextDirection: this.matchTextDirection,
       gaplessPlayback: this.gaplessPlayback,
       filterQuality: this.filterQuality,
+      isAntiAlias: this.isAntiAlias,
       headers: this.headers,
       cacheWidth: this.cacheWidth,
       cacheHeight: this.cacheHeight,
@@ -81,51 +59,28 @@ class FBImageNetwork extends FWidgetBuilder {
 }
 
 class FBImageAsset extends FWidgetBuilder {
-  String name;
-  AssetBundle bundle;
-  ImageFrameBuilder frameBuilder;
-  ImageErrorWidgetBuilder errorBuilder;
-  String semanticLabel;
-  bool excludeFromSemantics;
-  double scale;
-  double width;
-  double height;
-  Color color;
-  BlendMode colorBlendMode;
-  BoxFit fit;
-  AlignmentGeometry alignment;
-  ImageRepeat repeat;
-  Rect centerSlice;
-  bool matchTextDirection;
-  bool gaplessPlayback;
-  String package;
-  FilterQuality filterQuality;
-  int cacheWidth;
-  int cacheHeight;
-
-  FBImageAsset({
-    this.name,
-    this.bundle,
-    this.frameBuilder,
-    this.errorBuilder,
-    this.semanticLabel,
-    this.excludeFromSemantics = false,
-    this.scale,
-    this.width,
-    this.height,
-    this.color,
-    this.colorBlendMode,
-    this.fit,
-    this.alignment = Alignment.center,
-    this.repeat = ImageRepeat.noRepeat,
-    this.centerSlice,
-    this.matchTextDirection = false,
-    this.gaplessPlayback = false,
-    this.package,
-    this.filterQuality = FilterQuality.low,
-    this.cacheWidth,
-    this.cacheHeight,
-  });
+  String name = "";
+  AssetBundle? bundle;
+  ImageFrameBuilder? frameBuilder;
+  ImageErrorWidgetBuilder? errorBuilder;
+  String? semanticLabel;
+  bool excludeFromSemantics = false;
+  double? scale;
+  double? width;
+  double? height;
+  Color? color;
+  BlendMode? colorBlendMode;
+  BoxFit? fit;
+  AlignmentGeometry alignment = Alignment.center;
+  ImageRepeat repeat = ImageRepeat.noRepeat;
+  Rect? centerSlice;
+  bool matchTextDirection = false;
+  bool gaplessPlayback = false;
+  bool isAntiAlias = false;
+  String? package;
+  FilterQuality filterQuality = FilterQuality.low;
+  int? cacheWidth;
+  int? cacheHeight;
 
   @override
   Widget buildImpl() {
@@ -148,6 +103,7 @@ class FBImageAsset extends FWidgetBuilder {
       centerSlice: this.centerSlice,
       matchTextDirection: this.matchTextDirection,
       gaplessPlayback: this.gaplessPlayback,
+      isAntiAlias: this.isAntiAlias,
       package: this.package,
       filterQuality: this.filterQuality,
       cacheWidth: this.cacheWidth,
