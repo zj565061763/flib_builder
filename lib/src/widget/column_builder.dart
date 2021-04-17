@@ -2,21 +2,12 @@ import 'package:flib_builder/src/widget/widget_builder.dart';
 import 'package:flutter/material.dart';
 
 class FBColumn extends FChildrenWidgetBuilder {
-  MainAxisAlignment mainAxisAlignment;
-  MainAxisSize mainAxisSize;
-  CrossAxisAlignment crossAxisAlignment;
+  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start;
+  MainAxisSize mainAxisSize = MainAxisSize.max;
+  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center;
   TextDirection? textDirection;
-  VerticalDirection verticalDirection;
+  VerticalDirection verticalDirection = VerticalDirection.down;
   TextBaseline? textBaseline;
-
-  FBColumn({
-    this.mainAxisAlignment = MainAxisAlignment.start,
-    this.mainAxisSize = MainAxisSize.max,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
-    this.textDirection,
-    this.verticalDirection = VerticalDirection.down,
-    this.textBaseline,
-  });
 
   @protected
   @override
