@@ -38,11 +38,25 @@ abstract class FWidgetBuilder {
 }
 
 abstract class FChildWidgetBuilder extends FWidgetBuilder {
+  @protected
   Widget? child;
+
+  @override
+  Widget build({Widget? child}) {
+    this.child = child;
+    return super.build();
+  }
 }
 
 abstract class FChildrenWidgetBuilder extends FWidgetBuilder {
+  @protected
   List<Widget> children = const <Widget>[];
+
+  @override
+  Widget build({List<Widget> children = const <Widget>[]}) {
+    this.children = children;
+    return super.build();
+  }
 }
 
 //---------- stateful controller ----------
